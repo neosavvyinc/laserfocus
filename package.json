@@ -1,0 +1,26 @@
+{
+  "name": "laserfocus",
+  "version": "1.0.0",
+  "description": "sku life cycle manager",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neosavvyinc/laserfocus.git"
+  },
+  "author": "adam parrish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neosavvyinc/laserfocus/issues"
+  },
+  "homepage": "https://github.com/neosavvyinc/laserfocus#readme",
+  "dependencies": {
+    "next": "^4.1.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
