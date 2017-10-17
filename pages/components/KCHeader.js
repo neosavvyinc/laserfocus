@@ -81,6 +81,7 @@ export default () => (
             }
 
             .user-role-container {
+                margin: 0 0 0 0
                 flex-direction: column;
                 align-items: flex-end;
             }
@@ -102,11 +103,12 @@ export default () => (
             }
 
             .role {
-              width: 81px;
-              font-family: 'Source Sans Pro';
-              font-size: 14px;
-              text-align: left;
-              color: #9b9b9b;
+                margin: 0 0 0 0
+                width: 81px;
+                font-family: 'Source Sans Pro';
+                font-size: 14px;
+                text-align: left;
+                color: #9b9b9b;
             }
 
             .ic_dropdown {
