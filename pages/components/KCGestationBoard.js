@@ -1,5 +1,12 @@
+import BoardColumn from './BoardColumn';
+
 export default () => (
     <div className="board">
+
+        <BoardColumn/>
+        <BoardColumn/>
+        <BoardColumn/>
+        <BoardColumn/>
 
         <style jsx>{`
         .board {
