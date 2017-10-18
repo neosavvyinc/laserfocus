@@ -16,8 +16,10 @@ export default () => (
 
                .app {
                    margin: auto;
-                   width: 1440px;
-                   height: 824px;
+                   height: 100%;
+                   width: 100%;
+                   min-width: 1440px;
+                   min-height: 824px;
                    background-color: #eff3f6;
                }
 
