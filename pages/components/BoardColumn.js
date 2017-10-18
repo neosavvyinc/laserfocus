@@ -14,9 +14,12 @@ export default () => (
         <style jsx>{`
             .column {
                 padding-top: 20px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 20px;
                 margin: auto;
-                width: 320px;
-                height: 674px;
+                width: 380px;
+                height: 100%;
             }
 
             .title {
@@ -41,14 +44,17 @@ export default () => (
 
 
             .status-color {
-                width: 320px;
+                width: 100%;
                 height: 3px;
                 background-color: #feca34;
+                margin-bottom: 0px
             }
 
             .contents {
-                width: 320px;
-                height: 600px;
+                padding-top: 20px;
+                width: 100%
+                height: 100%;
+                min-height: 650px;
                 border-radius: 4px;
                 background-color: #f7f9fb;
                 border: solid 1px #e6eaee;

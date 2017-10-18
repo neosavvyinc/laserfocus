@@ -20,7 +20,7 @@ export default () => (
             justify-content: flex-start;
             align-content: left;
             align-items: center;
-            width: 270px;
+            width: 80%;
             height: 140px;
             border-radius: 4px;
             background-color: #ffffff;

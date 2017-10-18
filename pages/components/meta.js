@@ -7,35 +7,35 @@ export default () => (
             <meta charSet="utf-8" />
         </Head>
         <style jsx global>{`
-.text-style-emphasis {
-  font-family: 'Source Sans Pro';
-  font-size: 16px;
-  font-weight: 600;
-  text-align: left;
-  color: #303a71;
-}
+            .text-style-emphasis {
+                font-family: 'Source Sans Pro';
+                font-size: 16px;
+                font-weight: 600;
+                text-align: left;
+                color: #303a71;
+            }
 
-.linkText {
-  font-family: 'Source Sans Pro';
-  font-size: 15px;
-  font-weight: 600;
-  text-align: left;
-  color: #00aaff;
-}
+            .linkText {
+                font-family: 'Source Sans Pro';
+                font-size: 15px;
+                font-weight: 600;
+                text-align: left;
+                color: #00aaff;
+            }
 
-.standardText {
-  font-family: 'Source Sans Pro';
-  font-size: 15px;
-  text-align: left;
-  color: #354052;
-}
+            .standardText {
+                font-family: 'Source Sans Pro';
+                font-size: 15px;
+                text-align: left;
+                color: #354052;
+            }
 
-.text-style-light {
-  font-family: 'Source Sans Pro';
-  font-size: 14px;
-  text-align: left;
-  color: #9b9b9b;
-}
+            .text-style-light {
+                font-family: 'Source Sans Pro';
+                font-size: 14px;
+                text-align: left;
+                color: #9b9b9b;
+            }
     `}</style>
     </div>
 )

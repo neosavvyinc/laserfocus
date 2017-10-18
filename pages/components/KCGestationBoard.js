@@ -12,8 +12,8 @@ export default () => (
         .board {
             margin: auto;
             display: flex;
-            width: 1375px;
-            height: 674px;
+            width: 100%;
+            height: 100%;
         }
 
         `}

@@ -104,7 +104,7 @@ export default () => (
         }
 
         .toolbar-separator {
-            width: 1375px;
+            width: 95%;
             height: 1.5px;
             background-color: #dfe3e9;
             margin: auto;
