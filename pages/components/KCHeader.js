@@ -28,22 +28,8 @@ export default () => (
         </div>
         <style jsx>{`
 
-            .hamburger {
-                width: 32px;
-                height: 32px;
-                object-fit: contain;
-                padding: 20px;
-            }
-
-            .logo {
-                width: 211px;
-                height: 40px;
-                object-fit: contain;
-                padding: 20px;
-            }
-
             .application-header {
-                height: 100%;
+                height: 52px; // this is a guess
                 width: 100%;
                 background-color: #ffffff;
                 box-shadow: 0 4px 10px 0 rgba(48, 58, 113, 0.05);
@@ -51,18 +37,28 @@ export default () => (
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                box-sizing: border-box;
             }
 
-            .first-divider {
-                width: 1px;
-                height: 69px;
-                background-color: #dfe3e9;
+            .hamburger {
+                width: 32px;
+                height: 32px;
+                object-fit: contain;
+                padding: 0 20px;
             }
 
+            .logo {
+                width: 211px;
+                height: 40px;
+                object-fit: contain;
+                padding: 0 20px;
+            }
+            .first-divider,
             .second-divider {
                 width: 1px;
-                height: 69px;
+                height: 100%;
                 background-color: #dfe3e9;
+                margin: 0;
             }
 
             .notification-icon {
@@ -70,7 +66,7 @@ export default () => (
                 height: 26px;
                 object-fit: contain;
                 margin-left: auto;
-                padding: 20px;
+                padding: 0 20px;
             }
 
             .profile-container {
@@ -87,7 +83,7 @@ export default () => (
             }
 
             .profile-picture {
-                margin: 20px
+                margin: 0 20px
                 width: 44px;
                 height: 44px;
                 background-color: #7f8fa4;
