@@ -21,6 +21,7 @@
   "dependencies": {
     "next": "^4.1.0",
     "react": "^16.0.0",
+    "react-burger-menu": "^2.1.9",
     "react-dom": "^16.0.0"
   }
 }
