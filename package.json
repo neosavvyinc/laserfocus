@@ -23,5 +23,8 @@
     "react": "^16.0.0",
     "react-burger-menu": "^2.1.9",
     "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "http-proxy": "^1.16.2"
   }
 }
