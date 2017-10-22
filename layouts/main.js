@@ -8,8 +8,8 @@ export default ({ children }) => (
         <style jsx>{`
 
                 .mainContainer {
-                    //margin: 0 auto;
                     max-width: 1440px;
+                    font-family: 'Source Sans Pro';
                 }
 
                 `}</style>

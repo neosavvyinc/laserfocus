@@ -1,27 +1,21 @@
 export default () => (
     <div className="card">
-        <div className="left status-bar"><p>.</p></div>
-        <p className="left card-title">Kleenex Mona Upright Tissue Box</p>
-        <p className="left"><span className="status">Status: </span><span className="status-value">New</span></p>
-        <p className="left"><span className="date">Date Introduced: </span><span className="date-value">9/27/2017</span></p>
+        <span className="left status-bar"></span>
+        <p className="card-title">Kleenex Mona Upright Tissue Box</p>
+        <p><span className="status">Status: </span><span className="status-value">New</span></p>
+        <p><span className="date">Date Introduced: </span><span className="date-value">9/27/2017</span></p>
+        <img src="/static/placeholder-icon.png" className="avatar"/>
 
         <style jsx>{`
 
-        .left {
-            align-self: flex-start;
-            margin: 0 0 0 0;
-        }
-
         .card {
-            margin: auto;
+            margin: 13px 0 0 0;
             padding: 13px 10px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-content: left;
-            align-items: center;
-            //width: 100%;
-            height: 140px;
+            align-items: left;
+            max-width: 320px;
+            min-height: 155px;
             border-radius: 4px;
             background-color: #ffffff;
             border: solid 1px #e6eaee;
@@ -31,15 +25,16 @@ export default () => (
         .status-bar {
             width: 36px;
             height: 6px;
+            margin-bottom: .4em;
             border-radius: 3px;
             background-color: #feca34;
         }
 
-        .card-title {
+        p {
+            margin: .2em 0;
+        }
 
-            width: 236px;
-            height: 19px;
-            font-family: 'Source Sans Pro';
+        .card-title {
             font-size: 16px;
             font-weight: 600;
             line-height: 1.19;
@@ -48,9 +43,6 @@ export default () => (
         }
 
         .status, .date {
-            width: 151px;
-            height: 19px;
-            font-family: 'Source Sans Pro';
             font-size: 13px;
             font-weight: 600;
             line-height: 1.46;
@@ -59,15 +51,17 @@ export default () => (
         }
 
         .status-value, .date-value {
-            width: 151px;
-            height: 19px;
-            font-family: 'Source Sans Pro';
             font-size: 13px;
             font-weight: normal;
             line-height: 1.46;
             text-align: left;
             color: #273142;
             color: #9b9b9b;
+        }
+
+        .avatar {
+            margin-top: .4em;
+            align-self: flex-start;
         }
 
         `}</style>

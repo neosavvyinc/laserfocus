@@ -41,5 +41,6 @@ export default () => (
                     color: #9b9b9b;
                 }
             `}</style>
+            <link rel="icon" type="image/ico" href="/static/favicon.ico" />
         </Head>
 )

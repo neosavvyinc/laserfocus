@@ -25,8 +25,8 @@ export default () => (
                    min-width: 1440px;
                    background-color: #eff3f6;
                }
-               #page-wrap {
-                   height: 100vh;
+               #outer-container {
+                   min-height: 100vh;
                }
 
 

@@ -35,7 +35,8 @@ export default () => (
             }
 
             .contents {
-                padding: 10px;
+                padding: 0 10px 10px;
+                box-sizing: border-box;
                 width: auto;
                 border-radius: 4px;
                 background-color: #f7f9fb;
