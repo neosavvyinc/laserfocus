@@ -1,98 +1,110 @@
+/*
+    Of course, this bit is simple enough now that you can jsut loop over an array of progress points
+    and append the 'active' class to the current progress point when it is selected
+*/
+
 export default () => (
     <div className="timeline-container">
-
-
-        <div className="timeline-labels">
-            <div className="labeled-point-start">
-                <span className="t1 left">Sales Planning / Timeline</span>
-                <p className="t1-point left"/>
-            </div>
-            <div className="labeled-point-mid">
-                <span className="t2 center">Distribution</span>
-                <p className="t1-point center"/>
-            </div>
-            <div className="labeled-point-mid">
-                <span className="t3 center">Finance</span>
-                <p className="t1-point center"/>
-            </div>
-            <div className="labeled-point-end">
-                <span className="t4 right">Approval</span>
-                <p className="t1-point right"/>
-            </div>
+        <div className="ic-progress-point active">
+            <p>Sales Planning / Timeline</p>
+            <div className="dot" />
         </div>
-        <div className="timeline"/>
-
+        <div className="ic-progress-point">
+            <p>Distribution</p>
+            <div className="dot" />
+        </div>
+        <div className="ic-progress-point">
+            <p>Finance</p>
+            <div className="dot" />
+        </div>
+        <div className="ic-progress-point">
+            <p>Approval</p>
+            <div className="dot" />
+        </div>
 
         <style jsx>
             {`
                 .timeline-container {
                     width: 100%
-                    height: 120px;
-                }
-
-                .timeline-labels {
+                    height: 62px;
+                    margin: 20px 0;
+                    position: relative;
                     display: flex;
                     flex-direction: row;
+                    justify-content: space-between;
                 }
 
-                .timeline {
+                .timeline-container:after {
                     width: 100%;
                     height: 4px;
                     border-radius: 3px;
                     background-color: #d2d8df;
-                    float: -100px;
+                    position: absolute;
+                    top: 42px;
+                    left: 0;
+                    content: '';
                 }
 
-                .t1, .t2, .t3, .t4 {
+                .ic-progress-point {
+                    position: relative;
+                    height: 100%;
+                    display: flex;;
+                    justify-content: center;
+                    align-items: flex-end;
+                }
+                .ic-progress-point:first-of-type {
+                    justify-content: flex-start;
+                }
+                .ic-progress-point:last-of-type {
+                    justify-content: flex-end;
+                }
 
-                    height: 20px;
+                .ic-progress-point > p {
                     font-family: 'Source Sans Pro';
                     font-size: 16px;
                     font-weight: 600;
-                    text-align: center;
                     color: #7f8fa4;
+                    margin-bottom: 37px;
                 }
-
-                .t1-point {
+                .ic-progress-point .dot {
                     border-radius: 50%;
-                    width: 24px;
-                    height: 24px;
+                    width: 18px;
+                    height: 18px;
                     background-color: #eff3f6;
                     border: solid 3px #d2d8df;
+                    position: absolute;
+                    top: 50%;
+                    left: auto;
+                    content: '';
+                    z-index: 1;
+                }
+                .ic-progress-point .dot:before {
+                    width: 2px;
+                    height: 100%;
+                    background-color: #eff3f6;
+                    position: absolute;
+                    top: 0;
+                    left: -5px;
+                    content: '';
+                    z-index: 1;
+                }
+                .ic-progress-point .dot:after {
+                    width: 2px;
+                    height: 100%;
+                    background-color: #eff3f6;
+                    position: absolute;
+                    top: 0;
+                    right: -5px;
+                    content: '';
+                    z-index: 1;
                 }
 
-                .labeled-point-start {
-                    display: flex;
-                    flex-direction: column;
-                    flex-grow: 17;
+                .ic-progress-point.active .dot {
+                    height: 24px;
+                    width: 24px;
+                    border: none;
+                    content: url('/static/ic-progress-point-active.svg');
                 }
-
-                .labeled-point-mid {
-                    display: flex;
-                    flex-direction: column;
-                    flex-grow: 25;
-                }
-
-                .labeled-point-end {
-                    flex-grow: 17;
-                    display: flex;
-                    flex-direction: column;
-                    align-self: flex-end;
-                }
-
-                .left {
-                    align-self: flex-start
-                }
-
-                .center {
-                    margin: auto;
-                }
-
-                .right {
-                    align-self: flex-end
-                }
-
-
             `}
         </style>
     </div>

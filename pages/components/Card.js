@@ -14,17 +14,18 @@ export default () => (
 
         .card {
             margin: auto;
-            padding: 20px;
+            padding: 13px 10px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-content: left;
             align-items: center;
-            width: 80%;
+            //width: 100%;
             height: 140px;
             border-radius: 4px;
             background-color: #ffffff;
             border: solid 1px #e6eaee;
+            box-sizing: border-box;
         }
 
         .status-bar {

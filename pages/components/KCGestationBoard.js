@@ -10,10 +10,11 @@ export default () => (
 
         <style jsx>{`
         .board {
-            margin: auto;
+            margin: 0 32px;
             display: flex;
-            width: 100%;
-            height: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            //height: 100%;
         }
 
         `}

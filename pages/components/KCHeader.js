@@ -29,7 +29,7 @@ export default () => (
         <style jsx>{`
 
             .application-header {
-                height: 52px; // this is a guess
+                height: 70px;
                 width: 100%;
                 background-color: #ffffff;
                 box-shadow: 0 4px 10px 0 rgba(48, 58, 113, 0.05);
@@ -44,7 +44,7 @@ export default () => (
                 width: 32px;
                 height: 32px;
                 object-fit: contain;
-                padding: 0 20px;
+                margin: 0 32px;
             }
 
             .logo {

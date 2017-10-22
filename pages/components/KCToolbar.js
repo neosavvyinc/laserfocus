@@ -23,20 +23,20 @@ export default () => (
 
         <style jsx>{`
         .toolbar {
-            margin: auto;
             width: 100%;
+            height: 100px;
+            border-bottom: 1.5px solid #dfe3e9;
         }
 
         .toolbar-contents {
+            height: inherit;
+            margin: 0 32px;
             display: flex;
-            height: 60px;
+            align-items: center;
         }
 
         .title {
-            margin: auto;
-            flex-basis: 830px;
-            width: 92px;
-            height: 31px;
+            flex-grow: 1;
             font-family: 'Source Sans Pro';
             font-size: 24px;
             font-weight: 600;
@@ -45,12 +45,14 @@ export default () => (
         }
 
         .search-input {
-            margin: auto;
+            margin: 0 20px 0 0;
             width: 270px;
-            height: 36px;
+            height: 34px;
             border-radius: 4px;
             background-color: #ffffff;
             border: solid 1px #dfe3e9;
+            display: flex;
+            align-items: center;
         }
 
         .hidden-search {
@@ -61,7 +63,6 @@ export default () => (
             opacity: 0.5;
             font-family: 'Source Sans Pro';
             font-size: 14px;
-            font-weight: 600;
             line-height: 1.36;
             text-align: left;
             border: 0px solid;
@@ -97,18 +98,11 @@ export default () => (
             height: 19px;
             font-family: 'Source Sans Pro';
             font-size: 14px;
-            font-weight: 600;
             line-height: 1.36;
             text-align: center;
             color: #ffffff;
         }
 
-        .toolbar-separator {
-            width: 95%;
-            height: 1.5px;
-            background-color: #dfe3e9;
-            margin: auto;
-        }
 
         `}
         </style>
