@@ -1,0 +1,28 @@
+- name: Install basic packages
+  action: apt pkg={{ item }} state=installed update_cache=yes
+  with_items:
+    - nginx
+
+- name: Make sure the /opt/kc directory exists
+  file: dest=/opt/kc mode=755 state=directory owner={{ wwwUID }} group={{ wwwGID }}
+
+- name: Make sure the /opt/kc/www directory exists
+  file: dest=/opt/kc/www mode=755 state=directory owner={{ wwwUID }} group={{ wwwGID }}
+
+- name: Remove default installation site
+  file: dest=/etc/nginx/sites-available/default state=absent
+
+- name: Remove default installation site
+  file: dest=/etc/nginx/sites-enabled/default state=absent
+
+- name: Set up nginx default site
+  template: src=kc-demo dest=/opt/kc/kc-demo owner={{ wwwUID }} group={{ wwwGID }} mode=644
+
+- name: enable the kc-demo site
+  file: src=/opt/kc/kc-demo dest=/etc/nginx/sites-enabled/kc-demo state=link
+
+- name: restart nginx
+  service: name=nginx state=restarted
+
+- name: copy files
+  copy: src=../../../../out/ dest=/opt/kc/www/

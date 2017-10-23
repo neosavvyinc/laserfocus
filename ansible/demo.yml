@@ -1,0 +1,13 @@
+- hosts: webserver
+  user: kcuser
+  sudo: True
+  roles:
+    - nginx
+  vars:
+      serverListenPort: "8090"
+      serverListenAddress: "0.0.0.0"
+      nginxProxyToAddress: "0.0.0.0"
+      nginxProxyToPort: "8090"
+      wwwUID: "kcuser"
+      wwwGID: "kcuser"
+      deploymentBranch: "master"
