@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "npm run build && ansible-playbook -i ~/.ssh/id_rsa_kc "
   },
   "repository": {
     "type": "git",
