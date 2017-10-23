@@ -1,14 +1,20 @@
 import BoardColumn from './BoardColumn';
 
-export default () => (
-    <div className="board">
+import React, { Component } from 'react';
 
-        <BoardColumn/>
-        <BoardColumn/>
-        <BoardColumn/>
-        <BoardColumn/>
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
-        <style jsx>{`
+class KCGestationBoard extends Component {
+    render() {
+        return <div className="board">
+
+            <BoardColumn/>
+            <BoardColumn/>
+            <BoardColumn/>
+            <BoardColumn/>
+
+            <style jsx>{`
         .board {
             margin: 0 32px;
             padding-bottom: 32px;
@@ -18,6 +24,9 @@ export default () => (
         }
 
         `}
-    </style>
-    </div>
-)
+            </style>
+        </div>
+    }
+}
+
+export default DragDropContext(HTML5Backend)(KCGestationBoard)

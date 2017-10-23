@@ -1,12 +1,34 @@
-export default () => (
-    <div className="card">
-        <span className="left status-bar"></span>
-        <p className="card-title">Kleenex Mona Upright Tissue Box</p>
-        <p><span className="status">Status: </span><span className="status-value">New</span></p>
-        <p><span className="date">Date Introduced: </span><span className="date-value">9/27/2017</span></p>
-        <img src="/static/placeholder-icon.png" className="avatar"/>
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { ItemTypes } from './board/BoardConstants';
+import { DragSource } from 'react-dnd';
 
-        <style jsx>{`
+const cardSource = {
+    beginDrag(props) {
+        return {};
+    }
+};
+
+function collect(connect, monitor) {
+    return {
+        connectDragSource: connect.dragSource(),
+        isDragging: monitor.isDragging()
+    }
+};
+
+class Card extends Component {
+
+    render() {
+        const { connectDragSource, isDragging } = this.props;
+
+        return connectDragSource(<div className="card">
+            <span className="left status-bar"></span>
+            <p className="card-title">Kleenex Mona Upright Tissue Box</p>
+            <p><span className="status">Status: </span><span className="status-value">New</span></p>
+            <p><span className="date">Date Introduced: </span><span className="date-value">9/27/2017</span></p>
+            <img src="/static/placeholder-icon.png" className="avatar"/>
+
+            <style jsx>{`
 
         .card {
             margin: 13px 0 0 0;
@@ -65,6 +87,8 @@ export default () => (
         }
 
         `}</style>
-    </div>
+        </div>);
+    }
+}
 
-)
+export default DragSource(ItemTypes.CARD, cardSource, collect)(Card);
