@@ -1,8 +1,6 @@
 export default () => (
     <div className="application-header">
-        <img src="/static/ic-apps.png"
-             srcset="/static/ic-apps@2x.png 2x, /static/ic-apps@3x.png 3x"
-             className="hamburger"/>
+        <span className="menu"></span>
 
         <p className="first-divider"/>
 
@@ -40,11 +38,19 @@ export default () => (
                 box-sizing: border-box;
             }
 
-            .hamburger {
-                width: 32px;
-                height: 32px;
-                object-fit: contain;
-                margin: 0 32px;
+            .menu {
+                width: 95px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .bm-burger-button:hover {
+                background-color: #1e9fcf;
+            }
+            .bm-burger-bars:hover {
+                background-color: #fff;
             }
 
             .logo {

@@ -1,22 +1,16 @@
+import HamburgerButtonIcon from './HamburgerButtonIcon';
 import { slide as Menu } from 'react-burger-menu'
 
-
-var styles = {
+var burgerStyles = {
     bmBurgerButton: {
         position: 'fixed',
-        width: '36px',
-        height: '30px',
-        left: '30px',
-        top: '20px'
-    },
-    bmBurgerBars: {
-        background: '#373a47'
-    },
-    bmCrossButton: {
-        display: 'none'
-    },
-    bmCross: {
-        background: '#bdc3c7'
+        width: '95px',
+        height: '70px',
+        left: '0',
+        top: '0',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     bmMenuWrap: {
         height: 'calc(100vh - 70px)',
@@ -31,17 +25,18 @@ var styles = {
         fill: '#373a47'
     },
     bmItemList: {
-        color: '#b8b7ad'
-    },
-    bmOverlay: {
-        display: 'none'
+        color: '#b8b7ad',
+        padding: 0
     }
 };
 
 export default () => (
-    <Menu customBurgerIcon={
-        <img  src="/static/1pixel.png"/>
-    } styles={styles}>
+    <Menu
+        noOverlay
+        customCrossIcon={ false }
+        customBurgerIcon={
+        <HamburgerButtonIcon/>
+    } styles={burgerStyles}>
         <div className="navigation-menu">
             <ul className="align-top">
                 <li className="nav-item">SKUS</li>
@@ -57,9 +52,6 @@ export default () => (
             </ul>
         </div>
         <style jsx>{`
-            .bm-item-list {
-                padding: 0 !important;
-            }
             .navigation-menu {
                 height: calc(100vh - 70px);
                 display: flex !important;
@@ -90,7 +82,6 @@ export default () => (
             .align-top {
                 flex-grow: 1;
             }
-
         `}</style>
     </Menu>
 )
