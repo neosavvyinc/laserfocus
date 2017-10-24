@@ -1,234 +1,16 @@
+import GanttBar from './GanttBar';
+import GanttFooter from './GanttFooter';
+
 export default () => (
-    <div className="detail-view">
 
-        <section>
-            <div className="chart-container">
-                <div className="chart">
-                    <div className="heading">
-                        <div className="project">
-                            Projects - flexbox (sad)
-                        </div>
+    <section className="detail-view">
 
-                        <div className="date-col">
-                            <div className="month">
-                                October
-                            </div>
-
-                            <div className="day-row">
-                                <div className="day">
-                                    01
-                                </div>
-                                <div className="day">
-                                    02
-                                </div>
-                                <div className="day">
-                                    03
-                                </div>
-                                <div className="day">
-                                    04
-                                </div>
-                                <div className="day">
-                                    05
-                                </div>
-                                <div className="day">
-                                    06
-                                </div>
-                                <div className="day">
-                                    07
-                                </div>
-                                <div className="day">
-                                    08
-                                </div>
-                                <div className="day">
-                                    09
-                                </div>
-                                <div className="day">
-                                    10
-                                </div>
-                                <div className="day">
-                                    11
-                                </div>
-                                <div className="day">
-                                    12
-                                </div>
-                                <div className="day">
-                                    13
-                                </div>
-                                <div className="day">
-                                    14
-                                </div>
-                                <div className="day">
-                                    15
-                                </div>
-                                <div className="day">
-                                    16
-                                </div>
-                                <div className="day">
-                                    17
-                                </div>
-                                <div className="day">
-                                    18
-                                </div>
-                                <div className="day">
-                                    19
-                                </div>
-                                <div className="day">
-                                    20
-                                </div>
-                                <div className="day">
-                                    21
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="data-row">
-                        <div className="data-name">
-                            Kleenex Everyday Tissues Disney Moana Upright Box
-                        </div>
-                        <div className="bar">
-                            <div className="fill dist"></div>
-                        </div>
-                        <div className="bar">
-                            <div className="fill dist"></div>
-                        </div>
-                        <div className="bar">
-                            03
-                        </div>
-                        <div className="bar">
-                            04
-                        </div>
-                        <div className="bar">
-                            05
-                        </div>
-                        <div className="bar">
-                            06
-                        </div>
-                        <div className="bar">
-                            07
-                        </div>
-                        <div className="bar">
-                            08
-                        </div>
-                        <div className="bar">
-                            09
-                        </div>
-                        <div className="bar">
-                            10
-                        </div>
-                        <div className="bar">
-                            11
-                        </div>
-                        <div className="bar">
-                            12
-                        </div>
-                        <div className="bar">
-                            13
-                        </div>
-                        <div className="bar">
-                            14
-                        </div>
-                        <div className="bar">
-                            15
-                        </div>
-                        <div className="bar">
-                            16
-                        </div>
-                        <div className="bar">
-                            17
-                        </div>
-                        <div className="bar">
-                            18
-                        </div>
-                        <div className="bar">
-                            19
-                        </div>
-                        <div className="bar">
-                            20
-                        </div>
-                        <div className="bar">
-                            21
-                        </div>
-                    </div>
-
-                    <div className="data-row">
-                        <div className="data-name">
-                            Kleenex®  Soothing Lotion Tissues
-                        </div>
-                        <div className="bar">
-                            <div className="fill sales"></div>
-                        </div>
-                        <div className="bar">
-                            <div className="fill sales"></div>
-                        </div>
-                        <div className="bar">
-                            03
-                        </div>
-                        <div className="bar">
-                            04
-                        </div>
-                        <div className="bar">
-                            05
-                        </div>
-                        <div className="bar">
-                            06
-                        </div>
-                        <div className="bar">
-                            07
-                        </div>
-                        <div className="bar">
-                            08
-                        </div>
-                        <div className="bar">
-                            09
-                        </div>
-                        <div className="bar">
-                            10
-                        </div>
-                        <div className="bar">
-                            11
-                        </div>
-                        <div className="bar">
-                            12
-                        </div>
-                        <div className="bar">
-                            13
-                        </div>
-                        <div className="bar">
-                            14
-                        </div>
-                        <div className="bar">
-                            15
-                        </div>
-                        <div className="bar">
-                            16
-                        </div>
-                        <div className="bar">
-                            17
-                        </div>
-                        <div className="bar">
-                            18
-                        </div>
-                        <div className="bar">
-                            19
-                        </div>
-                        <div className="bar">
-                            20
-                        </div>
-                        <div className="bar">
-                            21
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div className="chart-container">
+        <div className="chart-container">
+            <div className="scrollable-div">
                 <table>
                     <tr className="tr-month">
                         <td rowspan="2" className="first">
-                            Projects - table (happy)
+                            Projects
                         </td>
 
                         <td className="td-month" colspan="100">
@@ -251,7 +33,7 @@ export default () => (
                             04
                         </td>
 
-                        <td>
+                        <td className="daily">
                             05
                         </td>
                         <td>
@@ -272,7 +54,7 @@ export default () => (
                         <td>
                             11
                         </td>
-                        <td>
+                        <td className="daily">
                             12
                         </td>
                         <td>
@@ -311,15 +93,12 @@ export default () => (
                             Kleenex Everyday Tissues Disney Moana Upright Box
                         </td>
                         <td>
-                            <div className="bar">
-                                <div className="sales fill"></div>
+                            <div id="1" className="bar">
+                                <GanttBar/>
                             </div>
                         </td>
 
                         <td>
-                            <div className="bar">
-                                <div className="sales fill"></div>
-                            </div>
                         </td>
                         <td>
                             03
@@ -327,7 +106,7 @@ export default () => (
                         <td>
                             04
                         </td>
-                        <td>
+                        <td className="daily">
                             05
                         </td>
                         <td>
@@ -340,7 +119,9 @@ export default () => (
                             08
                         </td>
                         <td>
-                            09
+                            <div id="2" className="bar">
+                                <div className="dist fill"></div>
+                            </div>
                         </td>
                         <td>
                             10
@@ -348,7 +129,7 @@ export default () => (
                         <td>
                             11
                         </td>
-                        <td>
+                        <td className="daily">
                             12
                         </td>
                         <td>
@@ -391,13 +172,13 @@ export default () => (
                         </td>
 
                         <td>
-                            <div className="bar">
+                            <div id="3" className="bar">
                                 <div className="dist fill"></div>
                             </div>
                         </td>
 
                         <td>
-                            <div className="bar">
+                            <div id="4" className="bar">
                                 <div className="dist fill"></div>
                             </div>
                         </td>
@@ -405,7 +186,7 @@ export default () => (
                         <td>
                             04
                         </td>
-                        <td>
+                        <td className="daily">
                             05
                         </td>
                         <td>
@@ -426,7 +207,7 @@ export default () => (
                         <td>
                             11
                         </td>
-                        <td>
+                        <td className="daily">
                             12
                         </td>
                         <td>
@@ -459,36 +240,31 @@ export default () => (
                     </tr>
                 </table>
             </div>
+        </div>
 
-            <div className="legend">
-                <div className="sales fill"></div>
-                <span>Sales Planning / Timeline</span>
-
-                <div className="dist fill"></div>
-                <span>Distribution</span>
-
-                <div className="fin fill"></div>
-                <span>Finance</span>
-
-                <div className="approval fill"></div>
-                <span>Approval</span>
-            </div>
+        <GanttFooter/>
 
 
-
-        </section>
-
-        <style jsx>{`
+    <style jsx>{`
 
             section {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .chart-container {
+                height: 100%;
+                margin: 32px;
+                flex-grow: 1;
+            }
+
+            .scrollable-div {
                 height: calc(100vh - 300px);
-                overflow: hidden;
-                overflow-y: auto;
-                margin: 32px 0;
+                overflow: auto;
             }
 
             table {
-                border: 1px solid lightgray;
+                border: 1px solid #e6eaee;
                 border-spacing: 0;
                 background-color: white;
             }
@@ -511,12 +287,13 @@ export default () => (
                 padding-left: 20px;
             }
 
+            td.daily {
+                background-color: #f7f9fb;
+            }
+
             td {
-                border-bottom: 1px solid lightgray;
-                border-right: 1px solid lightgray;
-                max-width: 60px;
-                min-width: 60px;
-                width: 60px !important;
+                border-bottom: 1px solid #e6eaee;
+                border-right: 1px solid #e6eaee;
                 height: 45px;
                 text-align: center;
                 vertical-align: middle;;
@@ -524,130 +301,45 @@ export default () => (
 
             tr.tr-bar td {
                 height: 90px;
+                min-width: 58px !important;
+                max-width: 58px !important;
             }
 
             tr.tr-bar td .bar {
                 border-right: none;
+                position: relative;
             }
 
 
-            .chart-container {
-                margin: 0 32px 10px;
-                overflow: auto;
+
+            // width of hard-coded bars, these are examples
+            tr.tr-bar td .bar .fill {
+                position: absolute;
+                top: -18px;
+                width: 60px;
             }
-            .chart {
+            // hard-coded fills, these are examples
+            .fill {
+                height: 36px;
                 width: 100%;
-                border: 1px solid lightgray;
-                margin-bottom: 12px;
-                background-color: white;
+                left: -1px;
             }
-            .heading {
-                display: flex;
-                flex-direction: row;
-                height: 90px;
+
+
+            .sales {
+                background-color: #feca34;
             }
-                .project {
-                    min-width: 280px;
-                    max-width: 280px;
-                    height: 89px;
-                    padding: 0 0 0 20px;
-                    display: flex;
-                    align-items: center;
-                    border-bottom: 1px solid lightgray;
-                    border-right: 1px solid lightgray;
-                }
-
-                .date-col {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-                }
-                    .month {
-                        width: 100%;
-                        padding: 0 0 0 20px;
-                        height: 45px;
-                        display: flex;
-                        align-items: center;
-                        border-bottom: 1px solid lightgray;
-                    }
-                    .day-row {
-                        display: flex;
-                        flex-direction: row;
-                        height: 45px;
-                        border-bottom: 1px solid lightgray;
-                    }
-                        .day {
-                            min-width: 60px;
-                            max-height: 45px;
-                            display: flex;
-                            justify-content: center;
-                            flex-direction: column;
-                            text-align: center;
-                            height: 45px;
-                            border-right: 1px solid lightgray;
-                        }
-
-            .data-row {
-                display: flex;
-                flex-direction: row;
-                height: 90px;
-                align-self: center;
-                border-bottom: 1px solid lightgray;
+            .dist {
+                background-color: #00aaff;
             }
-                .data-name {
-                    min-width: 280px;
-                    max-width: 280px;
-                    height: 100%;
-                    align-self: center;
-                    display: flex;
-                    align-items: center;
-                    padding: 0 0 0 20px;
-                    border-right: 1px solid lightgray;
-                }
-                .bar {
-                    padding: 0;
-                    min-width: 60px;
-                    display: flex;
-                    justify-content: center;
-                    flex-direction: column;
-                    text-align: center;
-                    height: 100%;
-                    max-height: 90px;
-                    border-right: 1px solid lightgray;
-                }
-                .fill {
-                    height: 36px;
-                    width: 100%;
-                }
-                .sales {
-                    background-color: #feca34;
-                }
-                .dist {
-                    background-color: #00aaff;
-                }
-                .fin {
-                    background-color: #1bb934;
-                }
-                .approval {
-                    background-color: #303a71;
-                }
-
-                .legend  {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    margin: 32px 0;
-                }
-
-                .legend div {
-                    width: 40px;
-                    height: 30px;
-                    display: inline-block;
-                    margin: 0 9px 0 32px;
-                }
+            .fin {
+                background-color: #1bb934;
+            }
+            .approval {
+                background-color: #303a71;
+            }
 
         `}</style>
-
-    </div>
+    </section>
 
 )

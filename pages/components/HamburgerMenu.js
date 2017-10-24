@@ -65,7 +65,6 @@ export default () => (
             }
             .nav-item {
                 list-style: none;
-                font-family: 'Source Sans Pro';
                 font-size: 16px;
                 font-weight: 600;
                 color: #354052;

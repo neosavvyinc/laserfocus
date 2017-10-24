@@ -19,7 +19,6 @@ export default () => (
             }
 
             .title h2 {
-                font-family: 'Source Sans Pro';
                 font-size: 16px;
                 font-weight: 600;
                 color: #354052;
@@ -28,7 +27,6 @@ export default () => (
             }
 
             .title .count {
-                font-family: 'Source Sans Pro';
                 font-size: 16px;
                 font-weight: 600;
                 color: #7f8fa4;
