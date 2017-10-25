@@ -19,6 +19,7 @@ function collect(connect, monitor) {
 }
 
 class BoardColumn extends Component {
+
     render() {
         const { connectDropTarget, isOver } = this.props;
 
@@ -82,7 +83,7 @@ class BoardColumn extends Component {
                         border-top-right-radius: 0;
                     }
 
-                `}
+               `}
                 </style>
             </div>
         )
