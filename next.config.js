@@ -4,7 +4,8 @@ module.exports = {
         return {
             '/': { page: '/' },
             '/gantt': { page: '/gantt' },
-            '/detail': { page: '/detail' }
+            '/detail': { page: '/detail' },
+            '/modal': { page: '/modal' }
         }
     }
 }

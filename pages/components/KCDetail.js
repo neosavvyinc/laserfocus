@@ -25,7 +25,7 @@ export default () => (
 
                 <div className="header">
 
-                    <Button  />
+                    <Button />
 
                     <img src="/static/placeholder-icon.png" className="avatar"/>
                     <div className="content">
