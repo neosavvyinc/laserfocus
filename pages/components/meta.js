@@ -6,6 +6,53 @@ export default () => (
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta charSet="utf-8" />
             <style jsx global>{`
+            
+            html, body, div, span, applet, object, iframe,
+            h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+            a, abbr, acronym, address, big, cite, code,
+            del, dfn, em, img, ins, kbd, q, s, samp,
+            small, strike, strong, sub, sup, tt, var,
+            b, u, i, center,
+            dl, dt, dd, ol, ul, li,
+            fieldset, form, label, legend,
+            table, caption, tbody, tfoot, thead, tr, th, td,
+            article, aside, canvas, details, embed, 
+            figure, figcaption, footer, header, hgroup, 
+            menu, nav, output, ruby, section, summary,
+            time, mark, audio, video {
+                margin: 0;
+                padding: 0;
+                border: 0;
+                font-size: 100%;
+                font: inherit;
+                vertical-align: baseline;
+            }
+            /* HTML5 display-role reset for older browsers */
+            article, aside, details, figcaption, figure, 
+            footer, header, hgroup, menu, nav, section {
+                display: block;
+            }
+            html {
+              box-sizing: border-box;
+            }
+            *, *:before, *:after {
+              box-sizing: inherit;
+            }
+            body {
+                line-height: 1;
+            }
+            ol, ul {
+                list-style: none;
+            }
+            blockquote, q {
+                quotes: none;
+            }
+            blockquote:before, blockquote:after,
+            q:before, q:after {
+                content: '';
+                content: none;
+            }
+            
 
                 body {
                     margin: 0;
@@ -13,6 +60,7 @@ export default () => (
                     font-size: 16px;
                     color: #354052;
                 }
+                
 
                 /*
                     1.5em = 24px
@@ -48,6 +96,10 @@ export default () => (
                     font-size: .84em;
                     text-align: left;
                 }
+                
+                p {
+                    line-height: 1.3em;
+                }
 
                 .text-emphasis {
                     font-weight: 600;
@@ -55,12 +107,24 @@ export default () => (
                 }
 
                 .linkText {
-                    font-size: 15px;
+                    font-size: .95em;
                     font-weight: 600;
                     text-align: left;
                     color: #00aaff;
                 }
 
+                .text-15 {
+                    font-size: .95em;
+                    text-align: left;
+                    color: #354052;
+                }
+                
+                .text-14 {
+                    font-size: 14px;
+                    text-align: left;
+                    color: #354052;
+                }
+                
                 .text-med {
                     font-size: 13px;
                     text-align: left;
@@ -96,6 +160,14 @@ export default () => (
                     background-color: #ffffff;
                     border: solid 1px #e6eaee;
                 }
+                
+                .status-icon {
+                    background: url(/static/ic-progress-point-active.svg) 0 0 no-repeat;
+                    display: inline-block;
+                    height: 10px;
+                    width: 10px;
+                    background-size: contain;
+                 }
 
 
             `}</style>

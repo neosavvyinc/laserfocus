@@ -6,7 +6,7 @@ export default class GanttBar extends React.Component {
         const multiplier = 3;  // set the width of the bar
         const day = 1;  // set on which day it starts
 
-        const defaultBarWidth = 61;
+        const defaultBarWidth = 60;
         const barWidth = defaultBarWidth * multiplier;
         const barLeft = defaultBarWidth * day;
 

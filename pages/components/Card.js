@@ -52,9 +52,6 @@ class Card extends Component {
             background-color: #feca34;
         }
 
-        p {
-            margin: .2em 0;
-        }
 
         .card-title {
             font-size: 16px;

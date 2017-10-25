@@ -301,8 +301,8 @@ export default () => (
 
             tr.tr-bar td {
                 height: 90px;
-                min-width: 58px !important;
-                max-width: 58px !important;
+                min-width: 60px !important;
+                max-width: 60px !important;
             }
 
             tr.tr-bar td .bar {

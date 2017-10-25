@@ -24,7 +24,7 @@ class BoardColumn extends Component {
         return connectDropTarget(
             <div className="column">
                 <span className="title">
-                    <h2>Sales & Planning </h2>
+                    <p className="text-emphasis">Sales & Planning </p>
                     <span className="count">(2)</span>
                 </span>
                 <div className={ isOver ? 'contents-red' : 'contents'}>
@@ -39,11 +39,7 @@ class BoardColumn extends Component {
                         height: 100%;
                     }
 
-                    h2.text-emphasis {
-                        margin: 16px 6px 16px 0;
-                    }
-
-                    h2.title  {
+                    .title p {
                         margin: 14px 0;
                         display: inline-block;
                         padding-right: 6px;

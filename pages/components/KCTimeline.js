@@ -66,8 +66,8 @@ export default () => (
                 }
                 .ic-progress-point .dot {
                     border-radius: 50%;
-                    width: 18px;
-                    height: 18px;
+                    width: 24px;
+                    height: 24px;
                     background-color: #eff3f6;
                     border: solid 3px #d2d8df;
                     position: absolute;

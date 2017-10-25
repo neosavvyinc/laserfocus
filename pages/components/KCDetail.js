@@ -1,5 +1,6 @@
 import KCTimeline from './KCTimeline';
 import Button from './Button';
+import SkuInfo from './SkuInfo';
 
 export default () => (
     <div className="detail-view">
@@ -12,7 +13,7 @@ export default () => (
                     <li className="active">PROJECT INFO</li>
                     <li>
                         CODE INFO
-                        <span className="status"></span>
+                        <span className="status-icon"></span>
                     </li>
                     <li>ROYALTY INFO</li>
                     <li>MISCELLANEOUS</li>
@@ -77,20 +78,20 @@ export default () => (
             </section>
 
             <aside className="project-history">
-                <div className="top">
+                <div className="header">
                     <h2>Project History</h2>
-                    <Button />
+                    <select>
+                        <option value="All Fields">All Fields</option>
+                    </select>
                 </div>
-                <div className="bottom">
+                <div className="history-container">
                     <div className="line"></div>
-                    <div className="sku-info-panel">
-                        <div className="panel sku-info">
-                        </div>
-                        <div className="panel sku-info"></div>
-                        <div className="panel sku-info"></div>
-                        <div className="panel sku-info"></div>
-                        <div className="panel sku-info"></div>
-                        <div className="panel sku-info"></div>
+                    <div className="sku-info-container">
+                        <SkuInfo/>
+                        <SkuInfo/>
+                        <SkuInfo/>
+                        <SkuInfo/>
+                        <SkuInfo/>
                     </div>
                 </div>
             </aside>
@@ -98,6 +99,7 @@ export default () => (
 
 
         <style jsx>{`
+
                 .detail-view {
                     display: flex;
                     flex-direction: column;
@@ -113,114 +115,107 @@ export default () => (
                     flex-wrap: nowrap;
                 }
 
+                .project-history {
+                    width: 25%;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .project-history .header {
+                    height: 40px;
+                    margin-bottom: 14px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                }
+                
+                .project-history .header h2 {
+                    flex-grow: 1;
+                }
+                .project-history .header select {
+                    width: 40%;
+                }
+
+                .project-history .history-container {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-direction: row;
+                    position: relative;
+                }
+                
+                .project-history .history-container .line {
+                    width: 43px;
+                    margin: 0 0 0 11px;
+                    height: 100%;
+                    border-left: 1px solid #dfe3e9;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                }
+
+                .sku-info-container {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;
+                    overflow-y: auto;
+                }
+
+
 
                 .sku-detail-container {
                     width: 75%;
                     margin-right: 24px;
                 }
 
-                .project-history {
-                    width: 25%;
-                    padding: 0 10px;
-                    display: flex;
-                    flex-direction: column;
-                }
+                    .sku-detail-container ul {
+                        list-style: none;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        margin: 0;
+                        padding: 0 10px;
+                        line-height: 38px;
+                        border-bottom: 1px solid #eff3f6;
+                    }
 
-                .project-history .top {
-                    height: 40px;
-                    margin-bottom: 14px;
-                }
+                    .sku-detail-container ul li {
+                        font-size: 13px;
+                        font-weight: 600;
+                        color: #7f8fa4;
+                    }
 
-                .project-history .bottom {
-                    flex-grow: 1;
-                    display: flex;
-                    flex-direction: row;
-                    position: relative;
-                }
+                    .sku-detail-container ul li.active {
+                        border-bottom: 1.5px solid #354052;
+                        margin-bottom: -1px;
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: #354052;
+                    }
 
-                .project-history .bottom .line {
-                    width: 3px;
-                    margin: 0 13px;
-                    height: 100%;
-                    background-color: #dfe3e9;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    height: 100%;
-                }
+                    .sku-detail-container ul li .status-icon {
+                        margin-bottom: 5px;
+                     }
 
-                .sku-info-panel {
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    height: 100%;
-                    overflow: hidden;
-                    overflow-y: auto;
-                    display: flex;
-                    flex-direction: column;
-                }
+                    .sku-detail-container .header {
+                        display: flex;
+                        flex-direction: row;
+                        margin: 30px;
+                        align-items: center;
+                        position: relative;
+                    }
 
-                .project-history .bottom .panel {
-                    min-height: 100px;
-                    width: 280px;
-                    background-color: white;
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 12px;
-                }
-
-                .sku-detail-container ul {
-                    list-style: none;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    margin: 0;
-                    padding: 0 10px;
-                    line-height: 38px;
-                    border-bottom: 1px solid #eff3f6;
-                }
-
-                .sku-detail-container ul li {
-                    font-size: 13px;
-                    font-weight: 600;
-                    color: #7f8fa4;
-                }
-
-                .sku-detail-container ul li.active {
-                    border-bottom: 1.5px solid #354052;
-                    margin-bottom: -1px;
-                    font-size: 14px;
-                    font-weight: 600;
-                    color: #354052;
-                }
-
-                .sku-detail-container ul li .status {
-                    background: url(/static/ic-progress-point-active.svg) 0 0 no-repeat;
-                    display: inline-block;
-                    height: 10px;
-                    width: 10px;
-                    background-size: contain;
-                    margin-bottom: 5px;
-                 }
-
-                .header {
-                    display: flex;
-                    flex-direction: row;
-                    margin: 30px;
-                    align-items: center;
-                    position: relative;
-                }
-
-                .header .avatar {
-                    width: 75px;
-                    height: auto;
-                    margin-right: 20px;
-                }
-                .header .content {
-                    flex-grow: 1;
-                }
+                    .sku-detail-container .header .avatar {
+                        width: 75px;
+                        height: auto;
+                        margin-right: 20px;
+                    }
+                    .sku-detail-container .header .content {
+                        flex-grow: 1;
+                    }
 
                 .btn-edit {
                     position:absolute;
