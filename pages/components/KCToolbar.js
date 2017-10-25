@@ -3,7 +3,7 @@ export default () => (
 
         <div className="toolbar-contents">
 
-            <span className="title">SKU Life Cycle Management</span>
+            <h1 className="title">SKU Life Cycle Management</h1>
 
             <div className="search-input">
                 <input className="hidden-search" placeholder="Search"/>
@@ -35,13 +35,8 @@ export default () => (
             align-items: center;
         }
 
-        .title {
+        h1 {
             flex-grow: 1;
-            font-family: 'Source Sans Pro';
-            font-size: 24px;
-            font-weight: 600;
-            text-align: left;
-            color: #354052;
         }
 
         .search-input {

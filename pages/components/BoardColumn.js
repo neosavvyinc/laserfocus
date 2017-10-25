@@ -39,19 +39,22 @@ class BoardColumn extends Component {
                         height: 100%;
                     }
 
-            .title h2 {
-                font-size: 16px;
-                font-weight: 600;
-                color: #354052;
-                display: inline-block;
-                padding-right: 6px;
-            }
+                    h2.text-emphasis {
+                        margin: 16px 6px 16px 0;
+                    }
 
-            .title .count {
-                font-size: 16px;
-                font-weight: 600;
-                color: #7f8fa4;
-            }
+                    h2.title  {
+                        margin: 14px 0;
+                        display: inline-block;
+                        padding-right: 6px;
+                    }
+
+                    .title .count {
+                        font-family: 'Source Sans Pro';
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #7f8fa4;
+                    }
 
                     .contents {
                         padding: 0 10px 10px;

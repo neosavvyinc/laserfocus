@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/neosavvyinc/laserfocus#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "next": "^4.1.0",
     "react": "^16.0.0",
     "react-burger-menu": "^2.1.9",

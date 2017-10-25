@@ -7,12 +7,11 @@ export default ({ children }) => (
 
         <style jsx>{`
 
-                .mainContainer {
-                    max-width: 1440px;
-                    font-family: 'Source Sans Pro';
-                }
+            .mainContainer {
+                max-width: 1440px;
+            }
 
-                `}</style>
+        `}</style>
 
     </div>
 

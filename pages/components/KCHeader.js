@@ -17,8 +17,8 @@ export default () => (
         <div className="profile-container">
             <p className="profile-picture"/>
             <div className="user-role-container">
-                <span className="text-style-emphasis username">Adam Parrish</span>
-                <p className="role text-style-light">Admin</p>
+                <span className="text-emphasis username">Adam Parrish</span>
+                <p className="role text-light">Admin</p>
             </div>
             <img src="/static/ic-dropdown.png"
                  srcset="/static/ic-dropdown@2x.png 2x, /static/ic-dropdown@3x.png 3x"

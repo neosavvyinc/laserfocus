@@ -60,7 +60,6 @@ export default () => (
                 }
 
                 .ic-progress-point > p {
-                    font-size: 16px;
                     font-weight: 600;
                     color: #7f8fa4;
                     margin-bottom: 37px;

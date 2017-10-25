@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <linearGradient id="a" x1="50%" x2="50%" y1="100%" y2="0%">
+            <stop offset="0%" stop-color="#F4F7F9"/>
+            <stop offset="100%" stop-color="#F4F7F9"/>
+        </linearGradient>
+        <rect id="b" width="24" height="24" rx="2.25"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <use fill="url(#a)" xlink:href="#b"/>
+            <rect width="23.25" height="23.25" x=".375" y=".375" stroke="#E7EAEE" stroke-width=".75" rx="2.25"/>
+        </g>
+        <path fill="#354052" d="M7.313 14.962a.243.243 0 0 0-.343 0c-.07.069-.931 2.645-.964 2.744a.242.242 0 0 0 .292.288c.092-.03 2.672-.894 2.74-.963a.243.243 0 0 0 0-.343l-1.725-1.726zm6.74-6.83a.322.322 0 0 0-.458 0l-5.938 5.939a.324.324 0 0 0 0 .457l1.816 1.816a.324.324 0 0 0 .457 0l5.938-5.939a.323.323 0 0 0 0-.457l-1.816-1.816zm2.49-1.919a.728.728 0 0 0-1.03 0l-1.071 1.073a.323.323 0 0 0 0 .458l1.815 1.815a.323.323 0 0 0 .457 0l1.072-1.072a.728.728 0 0 0 0-1.03l-1.243-1.244z"/>
+    </g>
+</svg>
