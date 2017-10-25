@@ -20,13 +20,14 @@ class Card extends Component {
 
     render() {
         const { connectDragSource, isDragging } = this.props;
-
+        const card = this.props.card;
         return connectDragSource(<div className="card">
             <span className="left status-bar"></span>
-            <p className="card-title">Kleenex Mona Upright Tissue Box</p>
-            <p><span className="status">Status: </span><span className="status-value">New</span></p>
-            <p><span className="date">Date Introduced: </span><span className="date-value">9/27/2017</span></p>
-            <img src="/static/placeholder-icon.png" className="avatar"/>
+            <p className="card-title">{card.productDescription}</p>
+            <p><span className="status">Status: </span><span className="status-value">{card.status}</span></p>
+            <p><span className="date">Date Introduced: </span><span className="date-value">{card.date}</span></p>
+            <span className="date-value"><img src="/static/placeholder-icon.png" className="avatar"/>{card.owner}</span>
+
 
             <style jsx>{`
 
@@ -54,6 +55,7 @@ class Card extends Component {
 
 
         .card-title {
+            font-family: 'Source Sans Pro';
             font-size: 16px;
             font-weight: 600;
             line-height: 1.19;
@@ -62,6 +64,7 @@ class Card extends Component {
         }
 
         .status, .date {
+            font-family: 'Source Sans Pro';
             font-size: 13px;
             font-weight: 600;
             line-height: 1.46;
@@ -70,6 +73,7 @@ class Card extends Component {
         }
 
         .status-value, .date-value {
+            font-family: 'Source Sans Pro';
             font-size: 13px;
             font-weight: normal;
             line-height: 1.46;

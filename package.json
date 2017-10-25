@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "deploy": "npm run build && ansible-playbook -i ~/.ssh/id_rsa_kc "
+    "deploy": "./node_modules/next/dist/bin/next export && ansible-playbook -u kcuser  --private-key=~/.ssh/id_rsa_kc -i ansible/hosts/demo ./ansible/demo.yml -vvvv"
   },
   "repository": {
     "type": "git",
@@ -21,15 +21,22 @@
   "homepage": "https://github.com/neosavvyinc/laserfocus#readme",
   "dependencies": {
     "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
     "next": "^4.1.0",
+    "next-redux-wrapper": "^1.3.4",
     "react": "^16.0.0",
     "react-burger-menu": "^2.1.9",
     "react-dnd": "^2.5.4",
     "react-dnd-html5-backend": "^2.5.4",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "simple-react-modal": "^0.5.1"
   },
   "devDependencies": {
-    "http-proxy": "^1.16.2"
+    "faker": "^4.1.0",
+    "http-proxy": "^1.16.2",
+    "json-server": "^0.12.0",
+    "redux-devtools": "^3.4.0"
   }
 }

@@ -5,11 +5,11 @@ export default () => (
         <p className="first-divider"/>
 
         <img src="/static/logo.jpg"
-             srcset="/static/logo@2x.jpg 2x, /static/logo@3x.jpg 3x"
+             srcSet="/static/logo@2x.jpg 2x, /static/logo@3x.jpg 3x"
              className="logo"/>
 
         <img src="/static/ic-noti.png"
-             srcset="/static/ic-noti@2x.png 2x, /static/ic-noti@3x.png 3x"
+             srcSet="/static/ic-noti@2x.png 2x, /static/ic-noti@3x.png 3x"
              className="notification-icon"/>
 
         <p className="second-divider"/>
@@ -21,7 +21,7 @@ export default () => (
                 <p className="role text-light">Admin</p>
             </div>
             <img src="/static/ic-dropdown.png"
-                 srcset="/static/ic-dropdown@2x.png 2x, /static/ic-dropdown@3x.png 3x"
+                 srcSet="/static/ic-dropdown@2x.png 2x, /static/ic-dropdown@3x.png 3x"
                  className="dropdown-icon"/>
         </div>
         <style jsx>{`

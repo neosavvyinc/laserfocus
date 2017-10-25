@@ -8,8 +8,8 @@ export default () => (
             <div className="search-input">
                 <input className="hidden-search" placeholder="Search"/>
                 <img src="/static/ic-search.png"
-                     srcset="/static/ic-search@2x.png 2x,/static/ic-search@3x.png 3x"
-                     class="magnify-icon"/>
+                     srcSet="/static/ic-search@2x.png 2x,/static/ic-search@3x.png 3x"
+                     className="magnify-icon"/>
             </div>
 
             <div className="quick-add-sku-btn">

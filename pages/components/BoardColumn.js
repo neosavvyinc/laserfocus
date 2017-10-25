@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import React, { Component } from 'react';
 import { ItemTypes } from './board/BoardConstants';
 import { DropTarget } from 'react-dnd';
@@ -24,12 +25,17 @@ class BoardColumn extends Component {
         return connectDropTarget(
             <div className="column">
                 <span className="title">
-                    <p className="text-emphasis">Sales & Planning </p>
+                    <p className="text-emphasis">{this.props.board.name}</p>
                     <span className="count">(2)</span>
                 </span>
                 <div className={ isOver ? 'contents-red' : 'contents'}>
-                    <Card/>
-                    {/*<Card/>*/}
+                    {
+                        _.map(this.props.cards, (card) => {
+                            return <Card
+                                card={card}
+                            />
+                        })
+                    }
                 </div>
 
 
