@@ -1,0 +1,56 @@
+{
+  "boards": [
+    {
+      "name": "Sales / Planning",
+      "id": 1,
+      "displayOrder": 0
+    },
+    {
+      "name": "Distribution",
+      "id": 2,
+      "displayOrder": 1
+    },
+    {
+      "name": "Finance",
+      "id": 3,
+      "displayOrder": 2
+    },
+    {
+      "name": "Approval",
+      "id": 4,
+      "displayOrder": 3
+    }
+  ],
+  "cards": [
+    {
+      "boardId": 1,
+      "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box",
+      "status": "New",
+      "date": "9/27/2017",
+      "owner": "Mina Pope"
+    },
+    {
+      "boardId": 2,
+      "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box 1",
+      "status": "New",
+      "date": "9/27/2017",
+      "owner": "Mina Pope"
+    },
+    {
+      "boardId": 3,
+      "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box 2",
+      "status": "New",
+      "date": "9/27/2017",
+      "owner": "Mina Pope"
+    },
+    {
+      "boardId": 4,
+      "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box 3",
+      "status": "New",
+      "date": "9/27/2017",
+      "owner": "Mina Pope"
+    }
+
+  ],
+  "users": []
+}
