@@ -9,17 +9,15 @@ import _ from 'lodash';
 
 class KCGestationBoard extends Component {
     render() {
-
-        console.log("This boards: ", this.props.boards)
-        console.log("This boards: ", this.props.board)
-
         return <div className="board">
 
 
             {
                 _.map(this.props.boards, (board) => {
                     return <BoardColumn
+                        key={board.id}
                         board={board}
+                        dispatchAction={this.props.dispatchAction}
                         cards={_.filter(this.props.cards, (c) => { return c.boardId === board.id })}
                     />
                 })

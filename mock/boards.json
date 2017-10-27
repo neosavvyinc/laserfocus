@@ -23,6 +23,7 @@
   ],
   "cards": [
     {
+      "id": 0,
       "boardId": 1,
       "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box",
       "status": "New",
@@ -30,6 +31,7 @@
       "owner": "Mina Pope"
     },
     {
+      "id": 1,
       "boardId": 2,
       "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box 1",
       "status": "New",
@@ -37,6 +39,7 @@
       "owner": "Mina Pope"
     },
     {
+      "id": 2,
       "boardId": 3,
       "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box 2",
       "status": "New",
@@ -44,6 +47,7 @@
       "owner": "Mina Pope"
     },
     {
+      "id": 3,
       "boardId": 4,
       "productDescription": "Kleenex Everyday Tissues Disney Moana Upright Box 3",
       "status": "New",

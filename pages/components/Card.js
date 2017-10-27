@@ -5,7 +5,9 @@ import { DragSource } from 'react-dnd';
 
 const cardSource = {
     beginDrag(props) {
-        return {};
+        return {
+            card: props.card
+        };
     }
 };
 
