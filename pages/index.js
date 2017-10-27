@@ -49,7 +49,6 @@ class Index extends Component {
     }
     render() {
 
-        console.log("properties: ", this.props)
         return <Page>
                     <KCGestationBoard
                         boards={this.props.boards}
