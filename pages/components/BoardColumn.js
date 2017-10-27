@@ -4,10 +4,21 @@ import { ItemTypes } from './board/BoardConstants';
 import { DropTarget } from 'react-dnd';
 
 import Card from './Card';
+import {
+    moveCard
+} from "../../api/api";
 
-const squareTarget = {
-    drop(props) {
-        //update our state / store
+import {
+    moveCardToBoardAction
+} from "../../actions/card_actions";
+
+const boardColumnTarget = {
+    drop(props, monitor) {
+        const dragItem = monitor.getItem();
+        moveCard(dragItem.card, props.board).then((response) => {
+            const updatedCard = response
+            props.dispatchAction(moveCardToBoardAction(updatedCard))
+        });
     }
 };
 
@@ -33,6 +44,7 @@ class BoardColumn extends Component {
                     {
                         _.map(this.props.cards, (card) => {
                             return <Card
+                                key={card.id}
                                 card={card}
                             />
                         })
@@ -90,4 +102,4 @@ class BoardColumn extends Component {
     };
 }
 
-export default DropTarget(ItemTypes.CARD, squareTarget, collect)(BoardColumn);
+export default DropTarget(ItemTypes.CARD, boardColumnTarget, collect)(BoardColumn);

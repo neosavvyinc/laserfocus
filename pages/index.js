@@ -7,16 +7,38 @@ import withRedux from "next-redux-wrapper";
 import Page from '../layouts/main'
 import KCGestationBoard from './components/KCGestationBoard';
 
+import {
+    findBoardAction,
+    findCardsAction,
+    FIND_BOARDS,
+    FIND_CARDS,
+    MOVE_CARD
+} from '../actions/card_actions'
+
+import {
+    findBoards,
+    findCards
+} from '../api/api';
+
 
 const reducer = (state = {
         boards: [],
         cards: []
     }, action) => {
     switch(action.type) {
-        case 'FIND_BOARDS':
+        case FIND_BOARDS:
             return {...state, boards: action.payload};
-        case 'FIND_CARDS':
+        case FIND_CARDS:
             return {...state, cards: action.payload};
+        case MOVE_CARD:
+            const updatedCard = action.payload.card;
+            const updatedCards = _.map(state.cards, (card) => {
+                if(card.id === updatedCard.id) {
+                    return updatedCard
+                }
+                return card;
+            });
+            return {...state, cards: updatedCards};
         default:
             return state;
 
@@ -31,19 +53,11 @@ const makeStore = (initialState) => {
 class Index extends Component {
 
     static async getInitialProps({store}) {
-        const res = await fetch('http://localhost:3000/boards/');
-        const boards = await res.json();
-        store.dispatch({
-            type: 'FIND_BOARDS',
-            payload: boards
-        });
+        const boards = await findBoards();
+        store.dispatch(findBoardAction(boards));
 
-        const res1 = await fetch('http://localhost:3000/cards/');
-        const cards = await res1.json();
-        store.dispatch({
-            type: 'FIND_CARDS',
-            payload: cards
-        });
+        const cards = await findCards();
+        store.dispatch(findCardsAction(cards));
         return {};
 
     }
@@ -54,6 +68,7 @@ class Index extends Component {
                     <KCGestationBoard
                         boards={this.props.boards}
                         cards={this.props.cards}
+                        dispatchAction={this.props.dispatchAction}
                     />
                </Page>
     }
@@ -66,7 +81,12 @@ const WrappedIndex = withRedux(
         mapStateToProps: (state) => ({
             boards: state.boards,
             cards: state.cards
-        })
+        }),
+        mapDispatchToProps: (dispatch, props) => {
+            return {
+                dispatchAction: dispatch
+            }
+        }
     }
 )(Index);
 
