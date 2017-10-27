@@ -1,12 +1,14 @@
 import Head from 'next/head'
 export default () => (
-
+    <div>
         <Head>
             <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta charSet="utf-8" />
-            <style jsx global>{`
-            
+            <link rel="icon" type="image/ico" href="/static/favicon.ico" />
+        </Head>
+        <style jsx global>{`
+
             html, body, div, span, applet, object, iframe,
             h1, h2, h3, h4, h5, h6, p, blockquote, pre,
             a, abbr, acronym, address, big, cite, code,
@@ -16,8 +18,8 @@ export default () => (
             dl, dt, dd, ol, ul, li,
             fieldset, form, label, legend,
             table, caption, tbody, tfoot, thead, tr, th, td,
-            article, aside, canvas, details, embed, 
-            figure, figcaption, footer, header, hgroup, 
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
             menu, nav, output, ruby, section, summary,
             time, mark, audio, video {
                 margin: 0;
@@ -28,7 +30,7 @@ export default () => (
                 vertical-align: baseline;
             }
             /* HTML5 display-role reset for older browsers */
-            article, aside, details, figcaption, figure, 
+            article, aside, details, figcaption, figure,
             footer, header, hgroup, menu, nav, section {
                 display: block;
             }
@@ -52,7 +54,6 @@ export default () => (
                 content: '';
                 content: none;
             }
-            
 
                 body {
                     margin: 0;
@@ -60,7 +61,7 @@ export default () => (
                     font-size: 16px;
                     color: #354052;
                 }
-                
+
 
                 /*
                     1.5em = 24px
@@ -96,7 +97,7 @@ export default () => (
                     font-size: .84em;
                     text-align: left;
                 }
-                
+
                 p {
                     line-height: 1.3em;
                 }
@@ -118,13 +119,13 @@ export default () => (
                     text-align: left;
                     color: #354052;
                 }
-                
+
                 .text-14 {
                     font-size: 14px;
                     text-align: left;
                     color: #354052;
                 }
-                
+
                 .text-med {
                     font-size: 13px;
                     text-align: left;
@@ -160,7 +161,7 @@ export default () => (
                     background-color: #ffffff;
                     border: solid 1px #e6eaee;
                 }
-                
+
                 .status-icon {
                     background: url(/static/ic-progress-point-active.svg) 0 0 no-repeat;
                     display: inline-block;
@@ -170,7 +171,26 @@ export default () => (
                  }
 
 
-            `}</style>
-            <link rel="icon" type="image/ico" href="/static/favicon.ico" />
-        </Head>
+            /* LAYOUT*/
+                .app {
+                   margin: auto;
+                   height: 100%;
+                   width: 100%;
+                   min-width: 1440px;
+                   min-height: 824px;
+                   background-color: #eff3f6;
+               }
+
+                #outer-container {
+                    min-height: 100vh;
+                }
+
+                .mainContainer {
+                    max-width: 1440px;
+                }
+
+
+
+         `}</style>
+    </div>
 )

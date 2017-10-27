@@ -5,10 +5,7 @@ import 'isomorphic-fetch'
 import withRedux from "next-redux-wrapper";
 
 import Page from '../layouts/main'
-import KCHeader from './components/KCHeader';
-import KCToolbar from './components/KCToolbar';
 import KCGestationBoard from './components/KCGestationBoard';
-import HamburgerMenu from './components/HamburgerMenu';
 
 
 const reducer = (state = {
@@ -54,37 +51,11 @@ class Index extends Component {
 
         console.log("properties: ", this.props)
         return <Page>
-             <main id="outer-container" className="app">
-                <HamburgerMenu/>
-                <div id="page-wrap">
-                    <KCHeader/>
-                    <KCToolbar/>
                     <KCGestationBoard
                         boards={this.props.boards}
                         cards={this.props.cards}
                     />
-                </div>
-
-
-                <style jsx>{`
-
-                   .app {
-                       margin: auto;
-                       width: 100%;
-                       min-width: 1440px;
-                       background-color: #eff3f6;
-                   }
-                   #outer-container {
-                       min-height: 100vh;
-                   }
-
-
-                `}
-                </style>
-
-
-             </main>
-        </Page>
+               </Page>
     }
 }
 
