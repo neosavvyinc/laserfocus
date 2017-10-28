@@ -127,7 +127,7 @@ export default () => (
                 }
 
                 .text-med {
-                    font-size: 13px;
+                    font-size: .81em;
                     text-align: left;
                     color: #354052;
                 }
@@ -140,7 +140,7 @@ export default () => (
 
 
                 .btn.icon {
-                    background: url(/static/edit.svg) no-repeat 0 0;
+                    background: url(/static/svg/edit.svg) no-repeat 0 0;
                     height: 24px;
                     width: 24px;
                     border: none;
@@ -150,7 +150,7 @@ export default () => (
                     cursor: pointer;
                 }
                 .btn.icon.edit {
-                    background: url(/static/edit.svg) no-repeat 0 0;
+                    background: url(/static/svg/edit.svg) no-repeat 0 0;
                 }
 
 
@@ -163,12 +163,31 @@ export default () => (
                 }
 
                 .status-icon {
-                    background: url(/static/ic-progress-point-active.svg) 0 0 no-repeat;
+                    background: url(/static/svg/ic-progress-point-active.svg) 0 0 no-repeat;
                     display: inline-block;
                     height: 10px;
                     width: 10px;
                     background-size: contain;
-                 }
+                }
+
+                /* colors */
+
+                .sales,
+                 .yellow {
+                    background-color: #feca34;
+                }
+                .dist,
+                .blue {
+                    background-color: #00aaff;
+                }
+                .fin,
+                 .green {
+                    background-color: #1bb934;
+                }
+                .approval,
+                .black {
+                    background-color: #303a71;
+                }
 
 
             /* LAYOUT*/

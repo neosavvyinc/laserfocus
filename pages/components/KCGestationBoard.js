@@ -32,7 +32,6 @@ class KCGestationBoard extends Component {
                     flex-direction: row;
                     justify-content: space-between;
                 }
-
             `}
             </style>
         </div>

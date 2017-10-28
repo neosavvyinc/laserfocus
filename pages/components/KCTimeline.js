@@ -101,7 +101,7 @@ export default () => (
                     height: 24px;
                     width: 24px;
                     border: none;
-                    content: url('/static/ic-progress-point-active.svg');
+                    content: url('/static/svg/ic-progress-point-active.svg');
                 }
             `}
         </style>

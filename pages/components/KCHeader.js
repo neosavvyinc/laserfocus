@@ -4,13 +4,22 @@ export default () => (
 
         <p className="first-divider"/>
 
-        <img src="/static/logo.jpg"
-             srcSet="/static/logo@2x.jpg 2x, /static/logo@3x.jpg 3x"
-             className="logo"/>
+        <div className="logo-title">
+            <img src="/static/images/logo.jpg"
+                 srcSet="/static/images/logo@2x.jpg 2x, /static/images/logo@3x.jpg 3x"
+                 className="logo"/>
+            <span className="title text-emphasis">IMF Lite Tool 2.0</span>
+        </div>
 
-        <img src="/static/ic-noti.png"
-             srcSet="/static/ic-noti@2x.png 2x, /static/ic-noti@3x.png 3x"
-             className="notification-icon"/>
+
+        <div className="search-input">
+            <input className="hidden-search" placeholder="Search"/>
+            <img src="/static/svg/ic-search.svg"
+                 srcSet="/static/images/ic-search@2x.png 2x,/static/images/ic-search@3x.png 3x"
+                 className="magnify-icon"/>
+        </div>
+
+        <div className="btn-notification"></div>
 
         <p className="second-divider"/>
 
@@ -25,6 +34,8 @@ export default () => (
                  className="dropdown-icon"/>
         </div>
         <style jsx>{`
+
+
 
             .application-header {
                 height: 70px;
@@ -53,12 +64,23 @@ export default () => (
                 background-color: #fff;
             }
 
-            .logo {
-                width: 211px;
-                height: 40px;
-                object-fit: contain;
-                padding: 0 20px;
+            .logo-title {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                flex-grow: 1;
             }
+                .logo {
+                    width: 211px;
+                    height: 40px;
+                    object-fit: contain;
+                    padding: 0 20px;
+                }
+                .title {
+                    border-left: 1px solid black;
+                    padding-left: 14px;
+                }
+
             .first-divider,
             .second-divider {
                 width: 1px;
@@ -67,14 +89,43 @@ export default () => (
                 margin: 0;
             }
 
-            .notification-icon {
-                width: 42px;
-                height: 26px;
-                object-fit: contain;
-                margin-left: auto;
-                padding: 0 20px;
+            .search-input {
+                margin: 0 20px 0 0;
+                width: 270px;
+                height: 34px;
+                border-radius: 4px;
+                background-color: #ffffff;
+                border: solid 1px #dfe3e9;
+                display: flex;
+                align-items: center;
             }
 
+            .hidden-search {
+                width: 225px;
+                padding-left: 10px
+                padding-right: 10px
+                height: 85%;
+                opacity: 0.5;
+                font-family: 'Source Sans Pro';
+                font-size: 14px;
+                line-height: 1.36;
+                text-align: left;
+                border: 0px solid;
+                outline: none;
+            }
+
+            .magnify-icon {
+                width: 20px;
+                height: 20px;
+                object-fit: contain;
+            }
+
+            .btn-notification {
+                height: 26px;
+                width: 42px;
+                background: url(static/svg/ic-noti.svg) no-repeat 0 0;
+                margin: 0 20px 0 0;
+            }
             .profile-container {
                 width: 250px;
                 display: flex;
@@ -82,36 +133,37 @@ export default () => (
                 align-items: center;
             }
 
+            .profile-picture {
+                margin: 0 0 0 20px
+                width: 44px;
+                height: 44px;
+                background-color: #7f8fa4;
+
+                display: none;
+            }
+
             .user-role-container {
                 margin: 0 0 0 0
                 flex-direction: column;
                 align-items: flex-end;
+                margin: 0 0 0 20px;
             }
+                .username {
+                    width: 95px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    text-align: left;
+                    color: #303a71;
+                }
 
-            .profile-picture {
-                margin: 0 20px
-                width: 44px;
-                height: 44px;
-                background-color: #7f8fa4;
-            }
-
-            .username {
-                width: 95px;
-                font-family: 'Source Sans Pro';
-                font-size: 16px;
-                font-weight: 600;
-                text-align: left;
-                color: #303a71;
-            }
-
-            .role {
-                margin: 0 0 0 0
-                width: 81px;
-                font-family: 'Source Sans Pro';
-                font-size: 14px;
-                text-align: left;
-                color: #9b9b9b;
-            }
+                .role {
+                    margin: 0 0 0 0
+                    width: 81px;
+                    font-family: 'Source Sans Pro';
+                    font-size: 14px;
+                    text-align: left;
+                    color: #9b9b9b;
+                }
 
             .dropdown-icon {
                 width: 8px;

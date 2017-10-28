@@ -56,6 +56,7 @@ class BoardColumn extends Component {
                     .column {
                         min-width: 320px;
                         height: 100%;
+                        margin: 13px 32px 0 0;
                     }
 
                     .title p {
@@ -72,7 +73,7 @@ class BoardColumn extends Component {
                     }
 
                     .contents {
-                        padding: 0 10px 10px;
+                        padding: 10px 10px 0;
                         box-sizing: border-box;
                         width: auto;
                         border-radius: 4px;
@@ -84,7 +85,7 @@ class BoardColumn extends Component {
                     }
 
                     .contents-red {
-                        padding: 0 10px 10px;
+                        padding: 10px 10px 0;
                         box-sizing: border-box;
                         width: auto;
                         border-radius: 4px;
