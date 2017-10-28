@@ -40,7 +40,7 @@ class BoardColumn extends Component {
                     <p className="text-emphasis">{this.props.board.name}</p>
                     <span className="count">(2)</span>
                 </span>
-                <div className={ isOver ? 'contents-red' : 'contents'}>
+                <div className={ isOver ? 'contents dragging' : 'contents'}>
                     {
                         _.map(this.props.cards, (card) => {
                             return <Card
@@ -73,6 +73,7 @@ class BoardColumn extends Component {
                     }
 
                     .contents {
+                        position: relative;
                         padding: 10px 10px 0;
                         box-sizing: border-box;
                         width: auto;
@@ -82,18 +83,25 @@ class BoardColumn extends Component {
                         border-top: 3px solid #feca34;
                         border-top-left-radius: 0;
                         border-top-right-radius: 0;
+                        min-height: 201px;
+                        cursor: pointer;
+                        z-index: 2;
                     }
+                        .contents:before {
+                            content: 'Drop here';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            margin: 81px 0 0 0;
+                            text-align: center;
+                            z-index: -1;
+                        }
 
-                    .contents-red {
-                        padding: 10px 10px 0;
-                        box-sizing: border-box;
-                        width: auto;
-                        border-radius: 4px;
-                        background-color: #0f0f0f;
-                        border: solid 1px #e6eaee;
-                        border-top: 3px solid #feca34;
-                        border-top-left-radius: 0;
-                        border-top-right-radius: 0;
+                    .dragging {
+                        background-color: #e6eaee;
+                        //transform: rotate(30deg);
                     }
 
                `}

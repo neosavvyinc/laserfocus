@@ -74,10 +74,6 @@ export default () => (
                             left: -1.2%;
                             width: 6px;
                             height: 6px;
-                            -webkit-transform: rotate(135deg);
-                            -ms-transform: rotate(135deg);
-                            -webkit-transform: rotate(135deg);
-                            -ms-transform: rotate(135deg);
                             transform: rotate(135deg);
                             border-right: 1px solid #e6eaee;
                             border-bottom: 1px solid #e6eaee;
