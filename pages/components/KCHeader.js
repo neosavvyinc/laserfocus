@@ -11,22 +11,20 @@ export default class KCHeader extends Component {
         this.state = {
             notificationsOpen: false,
             settingsOpen: false
-        }
-        this.openNotifications = this.openNotifications.bind(this);
-        this.openSettings = this.openSettings.bind(this);
+        };
     }
 
-    openNotifications() {
+    openNotifications = () => {
         this.setState(prevState => ({
             notificationsOpen: !prevState.notificationsOpen
         }));
-    }
+    };
 
-    openSettings() {
+    openSettings = () => {
         this.setState(prevState => ({
             settingsOpen: !prevState.settingsOpen
         }));
-    }
+    };
 
     render() {
 

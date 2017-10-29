@@ -1,9 +1,9 @@
 import React from 'react'
-var classNames = require('classnames/bind');
+import classNames from 'classnames/bind';
 
 let cx = classNames.bind(btnEdit);
 
-var btnEdit = {
+const btnEdit = {
     position: 'absolute',
     top: '0',
     right: '0'
@@ -13,11 +13,12 @@ var btnEdit = {
 export default class Button extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isToggleOn: true};
-        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            isToggleOn: true
+        };
     }
 
-    handleClick() {
+    handleClick = () => {
         this.setState(prevState => ({
             isToggleOn: !prevState.isToggleOn
         }));
@@ -30,7 +31,10 @@ export default class Button extends React.Component {
         });
 
         return (
-            <button className={className} style={btnEdit} onClick={this.handleClick}>
+            <button
+                className={className}
+                style={btnEdit}
+                onClick={this.handleClick}>
             </button>
         );
     }
