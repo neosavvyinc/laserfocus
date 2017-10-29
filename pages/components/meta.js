@@ -114,6 +114,10 @@ export default () => (
                     color: #00aaff;
                 }
 
+                .text-24 {
+                    font-size: 1.5em;
+                }
+
                 .text-15 {
                     font-size: .95em;
                     text-align: left;

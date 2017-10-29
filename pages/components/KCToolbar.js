@@ -2,8 +2,15 @@ export default () => (
     <div className="toolbar">
 
         <div className="toolbar-contents">
-
-            <h1 className="title">SKU Life Cycle Management</h1>
+            <div className="title-group">
+                <span className="top">
+                    <p className="text-24">SKU Life Cycle Management</p>
+                    <span className="breadcrumbs">
+                        <h1>Gestation</h1>
+                    </span>
+                </span>
+                <p className="text-light">Project Management Associate Dashboard</p>
+            </div>
 
             <div className="quick-add-sku-btn">
                 <img className="plus-icon"/>
@@ -16,20 +23,35 @@ export default () => (
 
         <style jsx>{`
         .toolbar {
-            width: 100%;
+            width: auto;
             height: 100px;
+            margin: 0 32px;
             border-bottom: 1.5px solid #dfe3e9;
         }
 
         .toolbar-contents {
             height: inherit;
-            margin: 0 32px;
             display: flex;
             align-items: center;
         }
 
-        h1 {
+        .title-group {
+            display: flex;
+            flex-direction: column;
             flex-grow: 1;
+        }
+            .title-group .top {
+                display: flex;
+                flex-direction: row;
+            }
+
+        .breadcrumbs {
+            background: url(static/svg/ic-right.svg) no-repeat 0 0;
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            margin: 4px 0 0 6px;
+            padding-left: 25px;
         }
 
 

@@ -13,18 +13,15 @@ var btnEdit = {
 export default class Button extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {isToggleOn: true};
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    state = { //counter: 1
-        };
-
-
-
-    handleClick = () => {
-        this.setState({
-            //counter: this.state.counter + 1
-        });
-    };
+    handleClick() {
+        this.setState(prevState => ({
+            isToggleOn: !prevState.isToggleOn
+        }));
+    }
 
     render() {
         let className = cx({
@@ -34,7 +31,6 @@ export default class Button extends React.Component {
 
         return (
             <button className={className} style={btnEdit} onClick={this.handleClick}>
-                {this.state.counter}
             </button>
         );
     }
