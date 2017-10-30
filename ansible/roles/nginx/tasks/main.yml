@@ -25,4 +25,4 @@
   service: name=nginx state=restarted
 
 - name: copy files
-  copy: src=../../../../out/ dest=/opt/kc/www/
+  copy: src=../../../../target/out/ dest=/opt/kc/www/

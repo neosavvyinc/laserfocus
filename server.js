@@ -1,11 +1,18 @@
+require('babel-runtime/core-js/object/keys');
+
 const { createServer } = require('http');
 const { createProxyServer } = require('http-proxy');
 const { parse } = require('url');
 const next = require('next');
 
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
-const handle = app.getRequestHandler();
+const routes = require('./src/routes');
+
+const app = next({
+    dir: './src',
+    dev: process.env.NODE_ENV !== 'production'
+});
+
+const handle = routes.getRequestHandler(app);
 
 const apiProxy = createProxyServer({
     target: {
@@ -32,4 +39,4 @@ app.prepare().then(() => {
         if (err) throw err;
         console.log('> Ready on http://localhost:3005')
     })
-})
+});
