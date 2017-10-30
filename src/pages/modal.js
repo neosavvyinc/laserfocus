@@ -3,7 +3,6 @@ import Page from '../layouts/main'
 import Modal from 'simple-react-modal'
 import React, { Component } from 'react';
 
-
 const closeStyle = {
     border: '1px solid red'
 };
@@ -15,7 +14,9 @@ const overlayStyle = {
     position: 'fixed',
     top: '0',
     left: '0',
-    display: 'flex'
+    display: 'flex',
+    zIndex: '400',
+    transition: 'opacity .2s ease-in'
 }
 
 const containerStyle = {
@@ -28,21 +29,37 @@ const containerStyle = {
 
 export default class KCModal extends Component {
 
+    constructor(){
+        super()
+        this.state = {}
+    }
+
+    show = () => {
+        this.setState({show: true})
+    }
+
+    close = () => {
+        this.setState({show: false})
+    }
+
     onClickAdd = () => {
         console.log("I clicked add");
     };
 
 
     render() {
+
         return (
             <Page>
 
-                <Modal show={true} transitionSpeed={1000}
+                <button style={{margin: '10% 46%'}} onClick={this.show}>Show Modal</button>
+
+                <Modal show={this.state.show} transitionSpeed={50}
                        style={overlayStyle}
                        className="test-class" //this will completely overwrite the default css completely
                        containerStyle={containerStyle} //changes styling on the inner content area
-                       containerClassName="test"
-                       closeOnOuterClick={true}>
+                       closeOnOuterClick={true}
+                       onClose={this.close}>
                     <div className="modal-content">
                         <div className="header">
                             <div className="header-container">
@@ -70,7 +87,7 @@ export default class KCModal extends Component {
 
                         <div className="footer">
                             <div className="btn-group">
-                                <button>Close</button>
+                                <button onClick={this.close}>Close</button>
                                 <button onClick={this.onClickAdd}>Add</button>
                             </div>
                         </div>
