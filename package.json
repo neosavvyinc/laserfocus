@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./build && rm -rf ./out && rm -rf ./target",
-    "build": "mkdir -p target && ./node_modules/next/dist/bin/next build src/",
+    "build": "mkdir -p target && next build src/",
     "start": "node server.js",
-    "deploy": "mkdir -p target && ./node_modules/next/dist/bin/next export -o target/out src/ && ansible-playbook -u kcuser --private-key=~/.ssh/id_rsa_kc -i ansible/hosts/demo ./ansible/demo.yml -vvvv"
+    "deploy": "mkdir -p target && next export -o target/out src/ && ansible-playbook -u kcuser --private-key=~/.ssh/id_rsa_kc -i ansible/hosts/demo ./ansible/demo.yml -vvvv"
   },
   "repository": {
     "type": "git",
