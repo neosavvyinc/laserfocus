@@ -33,6 +33,7 @@ class BoardColumn extends Component {
 
     render() {
         const { connectDropTarget, isOver } = this.props;
+        let deptClass = ('dept ' + this.props.board.departmentClass);
 
         return connectDropTarget(
             <div className="column">
@@ -40,12 +41,14 @@ class BoardColumn extends Component {
                     <p className="text-emphasis">{this.props.board.name}</p>
                     <span className="count">(2)</span>
                 </span>
-                <div className={ isOver ? 'contents dragging' : 'contents'}>
+                <div className={deptClass} />
+                <div className={ isOver ? 'contents dragging' : 'contents' }>
                     {
                         _.map(this.props.cards, (card) => {
                             return <Card
                                 key={card.id}
                                 card={card}
+                                board={this.props.board}
                             />
                         })
                     }
@@ -66,10 +69,14 @@ class BoardColumn extends Component {
                     }
 
                     .title .count {
-                        font-family: 'Source Sans Pro';
                         font-size: 16px;
                         font-weight: 600;
                         color: #7f8fa4;
+                    }
+
+                    .dept {
+                        height: 3px;
+                        width: 100%;
                     }
 
                     .contents {
@@ -80,7 +87,7 @@ class BoardColumn extends Component {
                         border-radius: 4px;
                         background-color: #f7f9fb;
                         border: solid 1px #e6eaee;
-                        border-top: 3px solid #feca34;
+                        border-top: none;
                         border-top-left-radius: 0;
                         border-top-right-radius: 0;
                         min-height: 201px;

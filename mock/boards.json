@@ -3,22 +3,26 @@
     {
       "name": "Sales / Planning",
       "id": 1,
-      "displayOrder": 0
+      "displayOrder": 0,
+      "departmentClass": "sales"
     },
     {
       "name": "Distribution",
       "id": 2,
-      "displayOrder": 1
+      "displayOrder": 1,
+      "departmentClass": "dist"
     },
     {
       "name": "Finance",
       "id": 3,
-      "displayOrder": 2
+      "displayOrder": 2,
+      "departmentClass": "fin"
     },
     {
       "name": "Approval",
       "id": 4,
-      "displayOrder": 3
+      "displayOrder": 3,
+      "departmentClass": "approval"
     }
   ],
   "cards": [
@@ -54,7 +58,6 @@
       "date": "9/27/2017",
       "owner": "Mina Pope"
     }
-
   ],
   "users": []
 }

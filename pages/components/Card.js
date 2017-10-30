@@ -22,9 +22,15 @@ class Card extends Component {
 
     render() {
         const { connectDragSource, isDragging } = this.props;
-        const card = this.props.card;
+        const {
+            card,
+            board
+        } = this.props;
+
+        let deptClass = 'dept-bar ';
+
         return connectDragSource(<div className="card">
-            <span className="status-bar sales"></span>
+            <span className={deptClass += board.departmentClass}></span>
             <p className="text-emphasis">{card.productDescription}</p>
             <p><span className="text-med text-emphasis">Status: </span><span className="text-light">{card.status}</span></p>
             <p><span className="text-med text-emphasis">Date Introduced: </span><span className="text-light">{card.date}</span></p>
@@ -50,7 +56,7 @@ class Card extends Component {
                     line-height: 1.5em;
                 }
 
-            .status-bar {
+            .dept-bar {
                 width: 36px;
                 height: 6px;
                 margin-bottom: .4em;
