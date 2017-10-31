@@ -1,12 +1,12 @@
 import Page from '../layouts/main'
-
 import KCGantt from './components/KCGantt';
-
-import { stack as Menu } from 'react-burger-menu'
+import KCToolbar from './components/KCToolbar';
 
 export default () => (
     <Page>
-
+        <KCToolbar
+            hideAdd={true}
+        />
         <KCGantt/>
 
     </Page>

@@ -5,19 +5,24 @@ import 'isomorphic-fetch'
 import withRedux from "next-redux-wrapper";
 
 import Page from '../layouts/main'
+import AddIMFProjectModal from './components/modals/AddIMFProjectModal';
 import KCGestationBoard from './components/KCGestationBoard';
+import KCToolbar from '../pages/components/KCToolbar';
 
 import {
     findBoardAction,
     findCardsAction,
+    addNewCardAction,
     FIND_BOARDS,
     FIND_CARDS,
-    MOVE_CARD
+    MOVE_CARD,
+    ADD_CARD
 } from '../actions/card_actions'
 
 import {
     findBoards,
-    findCards
+    findCards,
+    addCard
 } from '../api/api';
 
 
@@ -39,6 +44,9 @@ const reducer = (state = {
                 return card;
             });
             return {...state, cards: updatedCards};
+        case ADD_CARD:
+            const card = action.payload.card;
+            return {...state, cards: state.cards.concat(card)};
         default:
             return state;
 
@@ -52,6 +60,13 @@ const makeStore = (initialState) => {
 
 class Index extends Component {
 
+    constructor() {
+        super();
+        this.state = {
+            showAddProjectModal: false
+        }
+    }
+
     static async getInitialProps({store}) {
         const boards = await findBoards();
         store.dispatch(findBoardAction(boards));
@@ -61,10 +76,50 @@ class Index extends Component {
         return {};
 
     }
+
+    onShowClicked = () => {
+        this.setState({
+            showAddProjectModal: true
+        });
+    };
+
+    onCloseClicked = () => {
+        this.setState({
+            showAddProjectModal: false
+        });
+    };
+
+    onAddClicked = () => {
+        this.onShowClicked();
+    };
+
+    onAddCompleted = async () => {
+        const newCard = {
+            "boardId": 1,
+            "productDescription": "New Card",
+            "status": "New",
+            "date": "9/27/2017",
+            "owner": "Adam Parrish"
+        };
+        const action = addNewCardAction(newCard);
+        const result = await addCard(newCard)
+        this.props.dispatchAction(action);
+        this.onCloseClicked();
+    };
+
     render() {
 
         return <Page>
+                    <KCToolbar
+                        onClickAdd={this.onAddClicked}
+                    />
+                    <AddIMFProjectModal
+                        show={this.state.showAddProjectModal}
+                        onAdd={this.onAddCompleted}
+                        onClose={this.onCloseClicked}
+                    />
                     <KCGestationBoard
+
                         boards={this.props.boards}
                         cards={this.props.cards}
                         dispatchAction={this.props.dispatchAction}
