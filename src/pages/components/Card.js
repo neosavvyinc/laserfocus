@@ -34,7 +34,9 @@ class Card extends Component {
             <p className="text-emphasis"><Link route="detail" params={{id: card.id}}>{card.productDescription}</Link></p>
             <p><span className="text-med text-emphasis">Status: </span><span className="text-light">{card.status}</span></p>
             <p><span className="text-med text-emphasis">Date Introduced: </span><span className="text-light">{card.date}</span></p>
-            <span className="avatar text-med text-emphasis"><img src="/static/images/placeholder-icon.png" />{card.owner}</span>
+            <span className="avatar text-med text-emphasis"><img
+                src="/static/images/user-avatar.png"
+                srcSet="/static/images/user-avatar@2x.png 2x, /static/images/user-avatar@3x.png 3x"/>{card.owner}</span>
 
 
             <style jsx>{`
