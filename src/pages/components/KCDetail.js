@@ -27,7 +27,10 @@ export default () => (
 
                     <Button />
 
-                    <img src="/static/images/placeholder-icon.png" className="avatar"/>
+                    <img
+                        className="avatar"
+                        src="/static/images/user-avatar.png"
+                        srcSet="/static/images/user-avatar@2x.png 2x, /static/images/user-avatar@3x.png 3x"/>
                     <div className="content">
                         <h2>Kleenex Trusted Care Facial Tissues featuring Disney • Pixar’s Cars 3</h2>
                         <p><span className="date">Date Introduced: </span><span className="date-value">9/27/2017</span></p>

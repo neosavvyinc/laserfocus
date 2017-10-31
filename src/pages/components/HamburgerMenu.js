@@ -15,7 +15,8 @@ var burgerStyles = {
     bmMenuWrap: {
         height: 'calc(100vh - 70px)',
         top: '70px',
-        width: '270px'
+        width: '270px',
+        zIndex: '10'
     },
     bmMenu: {
         background: '#fff',
@@ -39,8 +40,8 @@ export default () => (
     } styles={burgerStyles}>
         <div className="navigation-menu">
             <ul className="align-top">
-                <li className="nav-item">SKUS</li>
-                <li className="nav-item">Brands</li>
+                <li className="nav-item">Project View</li>
+                <li className="nav-item">Board View</li>
                 <li className="nav-item">Users</li>
                 <li className="nav-item">Royalty Codes</li>
                 <li className="nav-item">Facilitators</li>

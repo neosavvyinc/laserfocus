@@ -1,5 +1,10 @@
-export default () => (
-    <div className="toolbar">
+export default ({ onClickAdd, hideAdd = false }) => {
+
+    const onAdd = () => {
+        onClickAdd()
+    };
+
+    return (<div className="toolbar">
 
         <div className="toolbar-contents">
             <div className="title-group">
@@ -12,10 +17,15 @@ export default () => (
                 <p className="text-light">Project Management Associate Dashboard</p>
             </div>
 
-            <div className="quick-add-sku-btn">
-                <img className="plus-icon"/>
-                <span className="quick-add-btn-txt">Add New SKU</span>
-            </div>
+            { hideAdd ?
+                <div></div>:
+                <div className="quick-add-sku-btn">
+                    <img className="plus-icon"/>
+                    <span
+                        onClick={onAdd}
+                        className="quick-add-btn-txt">Add New SKU</span>
+                </div>
+            }
         </div>
 
 
@@ -86,7 +96,5 @@ export default () => (
 
         `}
         </style>
-    </div>
-
-
-)
+    </div>)
+}

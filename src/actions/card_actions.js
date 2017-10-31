@@ -8,7 +8,6 @@ export function findBoardAction(boards) {
 
 export const FIND_CARDS = 'FIND_CARDS';
 export function findCardsAction( cards ) {
-    console.log("cards: ", cards);
     return {
         type: FIND_CARDS,
             payload: cards
@@ -17,9 +16,18 @@ export function findCardsAction( cards ) {
 
 export const MOVE_CARD = 'MOVE_CARD';
 export function moveCardToBoardAction( card ) {
-    console.log("MOVE ACTIONS")
     return {
         type: MOVE_CARD,
+        payload: {
+            card
+        }
+    }
+}
+
+export const ADD_CARD = 'ADD_CARD';
+export function addNewCardAction( card ) {
+    return {
+        type: ADD_CARD,
         payload: {
             card
         }
