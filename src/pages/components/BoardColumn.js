@@ -39,7 +39,7 @@ class BoardColumn extends Component {
             <div className="column">
                 <span className="title">
                     <p className="text-emphasis">{this.props.board.name}</p>
-                    <span className="count">(2)</span>
+                    <span className="count">({`${_.size(this.props.cards)}`})</span>
                 </span>
                 <div className={deptClass} />
                 <div className={ isOver ? 'contents dragging' : 'contents' }>
