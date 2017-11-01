@@ -2,33 +2,16 @@ import React, { Component } from 'react';
 
 export default class KCHamburgerMenu extends Component {
 
-    constructor() {
-        super();
-        this.state = {
-            show: false
+    static get defaultProps() {
+        return {
+            isOpen: false
         }
     }
-
-    onShowClicked = () => {
-        this.setState({
-            show: true
-        });
-    };
-
-    onCloseClicked = () => {
-        this.setState({
-            show: false
-        });
-    };
-
-    onAddClicked = () => {
-        // do something
-    };
 
     render() {
 
         var menuClasses = 'navigation-menu';
-        if (this.state.openMenu) menuClasses += ' open';
+        if (this.props.isOpen) menuClasses += ' open';
 
         return (
 

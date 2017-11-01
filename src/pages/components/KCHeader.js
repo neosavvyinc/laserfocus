@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import KCHamburger from './menu/KCHamburger';
 import IconNotification from './icons/IconNotification'
 import NotificationFlyout from './notifications/NotificationFlyout'
@@ -6,13 +7,17 @@ import SettingsFlyout from './SettingsFlyout'
 import React, { Component } from 'react';
 
 export default class KCHeader extends Component {
+    static get defaultProps() {
+        return {
+            onToggleMenu: _.noop
+        }
+    }
 
     constructor(props) {
         super(props);
         this.state = {
             notificationsOpen: false,
-            settingsOpen: false,
-            menuOpen: false
+            settingsOpen: false
         };
     }
 
@@ -37,7 +42,9 @@ export default class KCHeader extends Component {
 
             <div className="application-header">
 
-                <KCHamburger />
+                <KCHamburger
+                    onToggleMenu={this.props.onToggleMenu}
+                />
 
                 <p className="first-divider"/>
 

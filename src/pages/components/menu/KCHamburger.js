@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 export default class KCHamburger extends Component {
-
+    static get defaultProps() {
+        return {
+            onToggleMenu: _.noop
+        }
+    }
 
     constructor(props) {
         super(props);
-        this.state = {
-            menuOpen: false
-        };
     }
 
-    openMenu = () => {
-        this.setState(prevState => ({
-            menuOpen: !prevState.menuOpen
-        }));
+    onToggle = () => {
+        this.props.onToggleMenu();
     };
 
     render() {
 
         return (
             <div className="bm-burger-button"
-                 onClick={this.openMenu} >
+                 onClick={this.onToggle} >
                 <span className="bm-icon">
                     <div className="bm-burger-bars"></div>
                     <div className="bm-burger-bars"></div>
