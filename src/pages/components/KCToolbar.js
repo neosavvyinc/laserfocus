@@ -19,11 +19,9 @@ export default ({ onClickAdd, hideAdd = false }) => {
 
             { hideAdd ?
                 <div></div>:
-                <div className="quick-add-sku-btn">
+                <div className="quick-add-sku-btn" onClick={onAdd}>
                     <img className="plus-icon"/>
-                    <span
-                        onClick={onAdd}
-                        className="quick-add-btn-txt">Add New SKU</span>
+                    <span className="quick-add-btn-txt">Add New SKU</span>
                 </div>
             }
         </div>
@@ -73,6 +71,7 @@ export default ({ onClickAdd, hideAdd = false }) => {
             height: 36px;
             border-radius: 4px;
             background-color: #1e9fcf;
+            cursor: pointer;
         }
 
         .plus-icon {

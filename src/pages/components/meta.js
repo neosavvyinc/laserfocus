@@ -1,4 +1,5 @@
 import Head from 'next/head'
+
 export default () => (
     <div>
         <Head>
@@ -68,6 +69,9 @@ export default () => (
                     1.25em = 20px
                     .95em = 15px
                     .81em = 13px
+
+                    the blue: #1e9fcf
+                    the black: #354052
                 */
 
                 h1, h2, h3, h4, h5, p {
@@ -101,6 +105,15 @@ export default () => (
                 p {
                     line-height: 1.3em;
                 }
+                    p a,
+                    a {
+                        color: #354052;
+                        text-decoration: none;
+                    }
+                    p a:hover,
+                        a:hover{
+                        text-decoration: underline;
+                    }
 
                 .text-emphasis {
                     font-weight: 600;
@@ -204,15 +217,11 @@ export default () => (
                    background-color: #eff3f6;
                }
 
-                #outer-container {
-                    min-height: 100vh;
-                }
-
                 .mainContainer {
                     max-width: 1440px;
+                    min-height: 100vh;
+                    overflow: auto;
                 }
-
-
 
          `}</style>
     </div>

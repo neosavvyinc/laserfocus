@@ -1,3 +1,4 @@
+import KCHamburger from './menu/KCHamburger';
 import IconNotification from './icons/IconNotification'
 import NotificationFlyout from './notifications/NotificationFlyout'
 import SettingsFlyout from './SettingsFlyout'
@@ -10,7 +11,8 @@ export default class KCHeader extends Component {
         super(props);
         this.state = {
             notificationsOpen: false,
-            settingsOpen: false
+            settingsOpen: false,
+            menuOpen: false
         };
     }
 
@@ -28,12 +30,14 @@ export default class KCHeader extends Component {
         }));
     };
 
+
     render() {
 
         return (
 
             <div className="application-header">
-                <span className="menu"></span>
+
+                <KCHamburger />
 
                 <p className="first-divider"/>
 
