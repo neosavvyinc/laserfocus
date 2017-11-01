@@ -30,7 +30,7 @@ class Card extends Component {
         let deptClass = 'dept-bar ';
 
         return connectDragSource(<div className="card">
-            <span className={deptClass += board.departmentClass}></span>
+            {/*<span className={deptClass += board.departmentClass}></span>*/}
             <p className="text-emphasis"><Link route="detail" params={{id: card.id}}>{card.productDescription}</Link></p>
             <p><span className="text-med text-emphasis">Status: </span><span className="text-light">{card.status}</span></p>
             <p><span className="text-med text-emphasis">Date Introduced: </span><span className="text-light">{card.date}</span></p>
