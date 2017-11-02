@@ -86,6 +86,7 @@ export default class KCHamburgerMenu extends Component {
                         line-height: 1.6em;
                         padding: 6px 6px 6px 30px;
                         margin: 0;
+                        cursor: pointer;
                     }
                     .nav-item:hover {
                         background-color: #f7f9fb;

@@ -4,6 +4,7 @@ export default () => (
     <div>
         <Head>
             <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"/>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta charSet="utf-8" />
             <link rel="icon" type="image/ico" href="/static/favicon.ico" />
@@ -68,10 +69,12 @@ export default () => (
                     1.5em = 24px
                     1.25em = 20px
                     .95em = 15px
+                    .87em = 14px
                     .81em = 13px
 
                     the blue: #1e9fcf
                     the black: #354052
+                    the grey: #9b9b9b
                 */
 
                 h1, h2, h3, h4, h5, p {
@@ -156,6 +159,42 @@ export default () => (
                 }
 
 
+                .btn {
+                    width: auto;
+                    min-width: 100px;
+                    height: auto;
+                    padding: 7px 28px;
+                    font-size: .87em;
+                    line-height: inherit;
+                    font-weight: 600;
+                    color: #9b9b9b;
+                    border: 1px solid transparent;
+                    background-color: transparent;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                }
+                    .btn:hover {
+                        color: #888;
+                    }
+
+                .btn.blue {
+                    color: white;
+                    border: 1px solid #1e9fcf;
+                    border-radius: 3px;
+                    background-color: #1e9fcf;
+                }
+                    .btn.blue:hover {
+                        background-color: #1ba1e2;
+                    }
+
+                .btn .material-icons {
+                    margin-right: 4px;
+                }
+
+
                 .btn.icon {
                     background: url(/static/svg/edit.svg) no-repeat 0 0;
                     height: 24px;
@@ -222,6 +261,7 @@ export default () => (
                     min-height: 100vh;
                     overflow: auto;
                 }
+
 
          `}</style>
     </div>

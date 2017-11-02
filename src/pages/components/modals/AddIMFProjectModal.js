@@ -64,30 +64,53 @@ export default class AddIMFProjectModal extends Component {
                         <div className="header-container">
                             <h1>Modal Header</h1>
                             <div className="btn-group">
-                                <button>Help</button>
+                                <button className="btn help">
+                                    <i className="material-icons help">help</i>
+                                    Help
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <div className="content">
                         <div className="attributes">
-                            <div className="stuff">
-                                <div>
-                                    <h4>Project Number</h4>
-                                    <h3 className="text-light">(200,003,023)</h3>
+                            <div className="row">
+                                <div className="blue-panel">
+                                    <p className="text-emphasis">Blank/New SKU</p>
+                                    <h3 className="text-light">Start with a blank SKU</h3>
                                 </div>
                                 <div>
-                                    <h4>Project Title</h4>
-                                    <h3 className="text-light">(200,003,023) - Kleenex Disney tissues</h3>
+                                    <p className="text-emphasis">SKU Template</p>
+                                    <h3 className="text-light">Create a SKU with existing template</h3>
                                 </div>
                             </div>
+
+                            <div className="row">
+                                <div>
+                                    <p className="text-emphasis">Upload From Excel Spreadsheet</p>
+                                    <h3 className="text-light">Import an Excel Spreadsheet</h3>
+                                </div>
+                                <div>
+                                    <p className="text-emphasis">From Existing SKU</p>
+                                    <h3 className="text-light">Create a SKU from existing SKU attributes</h3>
+                                </div>
+                            </div>
+
+                            <div className="row">
+
+                                <div>
+                                    <p className="text-emphasis">Kleenex SKU Template</p>
+                                    <h3 className="text-light">Create a SKU of Kleenex product attributes</h3>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
                     <div className="footer">
                         <div className="btn-group">
-                            <button onClick={this.close}>Close</button>
-                            <button onClick={this.onAdd}>Add</button>
+                            <button className="btn" onClick={this.close}>Close</button>
+                            <button className="btn blue" onClick={this.onAdd}>Add</button>
                         </div>
                     </div>
                 </div>
@@ -120,35 +143,6 @@ export default class AddIMFProjectModal extends Component {
                             text-align: left;
                         }
 
-                    .content {
-                        flex-grow: 1;
-                    }
-
-                    .attributes {
-                        display: flex;
-                        flex-direction: column;
-                        margin: 30px;
-                    }
-
-                        .attributes h4 {
-                            margin-bottom: 12px;
-                        }
-
-                        .attributes h2 {
-                            border-bottom: 1px solid lightblue;
-                            line-height: 54px;
-                        }
-
-                        .attributes .stuff {
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-
-                        }
-
-                        .attributes .stuff div {
-                            width:50%;
-                        }
 
                     .footer {
                         height: 64px;
@@ -159,9 +153,55 @@ export default class AddIMFProjectModal extends Component {
                             text-align: right;
                         }
 
-                    .btn-group button {
-                        margin: 0 0 0 24px;
+                    .btn-group {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
                     }
+
+                    .header .btn-group .btn.help,
+                    .header .btn-group .btn .help {
+
+                        font-size: 14px;
+                        color: #1e9fcf;
+                    }
+
+
+                    .content {
+                        flex-grow: 1;
+                    }
+
+                    .attributes {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 30px;
+                    }
+
+                        .attributes p {
+                            margin-bottom: 12px;
+                        }
+
+                        .attributes .row {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: space-between;
+                            margin-bottom: 32px;
+                        }
+
+                        .attributes .row > div {
+                            width: 46%;
+                        }
+
+                        .blue-panel {
+                            width: 50%;
+                            border-radius: 4px;
+                            background-color: rgba(30, 159, 207, 0.1);
+                            border: solid 1px #1e9fcf;
+                            margin: 0 32px 0 0;
+                            padding: 14px;
+                        }
+
 
                     `}
                 </style>
