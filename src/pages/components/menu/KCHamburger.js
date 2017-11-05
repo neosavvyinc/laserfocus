@@ -16,7 +16,7 @@ export default class KCHamburger extends Component {
         };
     }
 
-    onToggleBurger = () => {
+     onToggleBurger = () => {
         this.setState(prevState => ({
             burgerOpen: !prevState.burgerOpen
         }));
@@ -66,7 +66,8 @@ export default class KCHamburger extends Component {
                     margin-top: 3px;
                     width: 18px;
                 }
-                    .bm-burger-button:hover .bm-burger-bars {
+                    .bm-burger-button:hover .bm-burger-bars,
+                    .bm-burger-button.active .bm-burger-bars {
                        background-color: white;
                     }
 
