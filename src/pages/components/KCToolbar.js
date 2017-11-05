@@ -54,7 +54,7 @@ export default ({ onClickAdd, hideAdd = false }) => {
             }
 
         .breadcrumbs {
-            background: url(static/svg/ic-right.svg) no-repeat 0 0;
+            background: url(/static/svg/ic-right.svg) no-repeat 0 0;
             display: flex;
             flex-direction: row;
             flex-grow: 1;
@@ -85,7 +85,6 @@ export default ({ onClickAdd, hideAdd = false }) => {
             margin: auto;
             width: 81px;
             height: 19px;
-            font-family: 'Source Sans Pro';
             font-size: 14px;
             line-height: 1.36;
             text-align: center;

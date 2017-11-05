@@ -194,6 +194,21 @@ export default () => (
                     margin-right: 4px;
                 }
 
+                .panel.modal {
+                    min-height: 0;
+                    width: 48%;
+                    margin: 0 0 12px 0;
+                    padding: 14px;
+                    border: none;
+                    cursor: pointer;
+                }
+                    .panel.modal.active {
+                        border-radius: 4px;
+                        background-color: rgba(30, 159, 207, 0.1);
+                        border: solid 1px #1e9fcf;
+                    }
+
+
 
                 .btn.icon {
                     background: url(/static/svg/edit.svg) no-repeat 0 0;

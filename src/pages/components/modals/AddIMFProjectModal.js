@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'simple-react-modal'
 import _ from 'lodash';
+import ModalPanel from "./ModalPanel";
 
 const overlayStyle = {
     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -27,7 +28,9 @@ export default class AddIMFProjectModal extends Component {
         return {
             onClose: _.noop,
             onOpen: _.noop,
-            onAdd: _.noop
+            onAdd: _.noop,
+            onTogglePanel: _.noop,
+            items: _.noop
         }
     }
 
@@ -51,7 +54,34 @@ export default class AddIMFProjectModal extends Component {
     };
 
     render () {
-        const showModal = this.props.show
+
+        const showModal = this.props.show;
+
+        /* wouldn't this look good in the db? */
+        let items = [
+            {
+                header:'Blank/New SKU',
+                content:'Start with a blank SKU'
+            },
+            {
+                header:'SKU Template',
+                content:'Create a SKU with existing template'
+            },
+            {
+                header:'Upload From Excel Spreadsheet',
+                content:'Import an Excel Spreadsheet'
+            },
+            {
+                header:'From Existing SKU',
+                content:'Create a SKU from existing SKU attributes'
+            },
+            {
+                header:'Kleenex SKU Template',
+                content:'Create a SKU of Kleenex product attributes'
+            }
+        ];
+
+
         return (
             <Modal show={showModal} transitionSpeed={50}
                    style={overlayStyle}
@@ -74,36 +104,18 @@ export default class AddIMFProjectModal extends Component {
 
                     <div className="content">
                         <div className="attributes">
-                            <div className="row">
-                                <div className="blue-panel">
-                                    <p className="text-emphasis">Blank/New SKU</p>
-                                    <h3 className="text-light">Start with a blank SKU</h3>
-                                </div>
-                                <div>
-                                    <p className="text-emphasis">SKU Template</p>
-                                    <h3 className="text-light">Create a SKU with existing template</h3>
-                                </div>
-                            </div>
+                            {
 
-                            <div className="row">
-                                <div>
-                                    <p className="text-emphasis">Upload From Excel Spreadsheet</p>
-                                    <h3 className="text-light">Import an Excel Spreadsheet</h3>
-                                </div>
-                                <div>
-                                    <p className="text-emphasis">From Existing SKU</p>
-                                    <h3 className="text-light">Create a SKU from existing SKU attributes</h3>
-                                </div>
-                            </div>
+                                _.map(items, (item, idx) => {
+                                    return <ModalPanel
+                                        onTogglePanel={this.props.onTogglePanel}
+                                        key={idx}
+                                        item={item}
+                                    />
 
-                            <div className="row">
+                                })
 
-                                <div>
-                                    <p className="text-emphasis">Kleenex SKU Template</p>
-                                    <h3 className="text-light">Create a SKU of Kleenex product attributes</h3>
-                                </div>
-                            </div>
-
+                            }
                         </div>
                     </div>
 
@@ -126,7 +138,7 @@ export default class AddIMFProjectModal extends Component {
                     .header,
                     .footer {
                         background-color: #fafafa;
-                        height: 64px;
+                        min-height: 64px;
                         display: flex;
                         align-items: center;
                         padding: 0 32px;
@@ -143,28 +155,22 @@ export default class AddIMFProjectModal extends Component {
                             text-align: left;
                         }
 
-
-                    .footer {
-                        height: 64px;
-                        background-color: #fafafa;
-                    }
-                        .footer .btn-group {
-                            width: 100%;
-                            text-align: right;
-                        }
-
                     .btn-group {
                         display: flex;
                         flex-direction: row;
                         justify-content: flex-end;
                     }
 
-                    .header .btn-group .btn.help,
-                    .header .btn-group .btn .help {
+                        .header .btn-group .btn.help,
+                        .header .btn-group .btn .help {
+                            font-size: 14px;
+                            color: #1e9fcf;
+                        }
 
-                        font-size: 14px;
-                        color: #1e9fcf;
-                    }
+                        .footer .btn-group {
+                            width: 100%;
+                            text-align: right;
+                        }
 
 
                     .content {
@@ -173,34 +179,16 @@ export default class AddIMFProjectModal extends Component {
 
                     .attributes {
                         display: flex;
-                        flex-direction: column;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
                         margin: 30px;
                     }
 
                         .attributes p {
+                            font-color: #354052
                             margin-bottom: 12px;
                         }
 
-                        .attributes .row {
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            justify-content: space-between;
-                            margin-bottom: 32px;
-                        }
-
-                        .attributes .row > div {
-                            width: 46%;
-                        }
-
-                        .blue-panel {
-                            width: 50%;
-                            border-radius: 4px;
-                            background-color: rgba(30, 159, 207, 0.1);
-                            border: solid 1px #1e9fcf;
-                            margin: 0 32px 0 0;
-                            padding: 14px;
-                        }
 
 
                     `}

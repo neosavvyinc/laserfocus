@@ -21,6 +21,7 @@ export default class KCHamburger extends Component {
             burgerOpen: !prevState.burgerOpen
         }));
     };
+
     onToggle = () => {
         this.props.onToggleMenu();
         this.onToggleBurger();
