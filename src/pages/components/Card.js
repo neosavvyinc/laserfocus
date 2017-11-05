@@ -29,7 +29,7 @@ class Card extends Component {
 
         let deptClass = 'dept-bar ';
 
-        return connectDragSource(<div className="card">
+        return connectDragSource(<div className={this.props.isDragging ? 'card dragging' : 'card'}>
             {/*<span className={deptClass += board.departmentClass}></span>*/}
             <Link route="detail" params={{id: card.id}}><p className="text-emphasis">{card.productDescription}</p></Link>
             <p><span className="text-med text-emphasis">Status: </span><span className="text-light">{card.status}</span></p>
@@ -54,6 +54,9 @@ class Card extends Component {
                 border: solid 1px #e6eaee;
                 box-sizing: border-box;
             }
+                .card.dragging {
+                    transform: rotate(10deg);
+                }
                 p {
                     line-height: 1.5em;
                 }

@@ -13,11 +13,8 @@ export default class SettingsFlyout extends Component {
 
     render() {
 
-        var flyoutClasses = 'flyout-container';
-        if (this.state.openSettings) flyoutClasses += ' open';
-
         return (
-            <div className={flyoutClasses}>
+            <div className={this.state.openSettings ? 'flyout-container open' : 'flyout-container'}>
                 <div className="settings-flyout">
                     <div className="nub"></div>
                     <div className="settings-content">

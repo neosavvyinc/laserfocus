@@ -14,11 +14,8 @@ export default class NotificationFlyout extends Component {
 
     render() {
 
-        var flyoutClasses = 'flyout-container';
-        if (this.state.openNotifications) flyoutClasses += ' open';
-
         return (
-            <div className={flyoutClasses}>
+            <div className={this.state.openNotifications ? 'flyout-container open' : 'flyout-container'}>
                 <div className="notification-flyout">
                     <div className="nub"></div>
                     <div className="notifications-bar">
