@@ -35,6 +35,16 @@ export default class ModalPanel extends Component {
                  onClick={this.onToggle}>
                 <p className="text-emphasis">{item.content}</p>
                 <h3 className="text-light">{item.header}</h3>
+
+
+                <style jsx>{`
+                    .panel.modal p {
+                        font-color: #354052
+                        margin-bottom: 12px;
+                    }
+                `}
+                </style>
+
             </div>
         )
     }

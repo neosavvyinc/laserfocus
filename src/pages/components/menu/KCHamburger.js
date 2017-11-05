@@ -49,8 +49,7 @@ export default class KCHamburger extends Component {
                     align-items: center;
                     cursor: pointer;
                 }
-                    .bm-burger-button:hover,
-                    .bm-burger-button.active {
+                    .bm-burger-button:hover {
                         background-color: #1e9fcf;
                     }
 
