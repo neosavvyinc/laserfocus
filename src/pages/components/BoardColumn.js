@@ -106,10 +106,6 @@ class BoardColumn extends Component {
                             z-index: -1;
                         }
 
-                    .dragging {
-                        background-color: #e6eaee;
-                        //transform: rotate(30deg);
-                    }
 
                `}
                 </style>

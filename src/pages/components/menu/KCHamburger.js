@@ -4,22 +4,35 @@ import _ from 'lodash';
 export default class KCHamburger extends Component {
     static get defaultProps() {
         return {
-            onToggleMenu: _.noop
+            onToggleMenu: _.noop,
+            onToggleBurger: _.noop
         }
     }
 
     constructor(props) {
         super(props);
+        this.state = {
+            burgerOpen: false
+        };
     }
 
+    onToggleBurger = () => {
+        this.setState(prevState => ({
+            burgerOpen: !prevState.burgerOpen
+        }));
+    };
     onToggle = () => {
         this.props.onToggleMenu();
+        this.onToggleBurger();
     };
 
     render() {
 
+        let burgerClasses = 'bm-burger-button';
+        if (this.state.burgerOpen) burgerClasses += ' active';
+
         return (
-            <div className="bm-burger-button"
+            <div className={burgerClasses}
                  onClick={this.onToggle} >
                 <span className="bm-icon">
                     <div className="bm-burger-bars"></div>
@@ -37,7 +50,8 @@ export default class KCHamburger extends Component {
                     align-items: center;
                     cursor: pointer;
                 }
-                    .bm-burger-button:hover {
+                    .bm-burger-button:hover,
+                    .bm-burger-button.active {
                         background-color: #1e9fcf;
                     }
 
@@ -52,7 +66,8 @@ export default class KCHamburger extends Component {
                     margin-top: 3px;
                     width: 18px;
                 }
-                    .bm-burger-button:hover .bm-burger-bars {
+                    .bm-burger-button:hover .bm-burger-bars,
+                    .bm-burger-button.active .bm-burger-bars {
                        background-color: white;
                     }
 

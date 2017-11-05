@@ -14,13 +14,15 @@ export default class Main extends Component {
     constructor() {
         super();
         this.state = {
-            isMenuOpen: false
+            isMenuOpen: false,
+            isBurgerOpen: false
         }
     }
 
     toggleMenu = () => {
         this.setState({
-            isMenuOpen: !this.state.isMenuOpen
+            isMenuOpen: !this.state.isMenuOpen,
+            isBurgerOpen: !this.state.isBurgerOpen
         });
     };
 

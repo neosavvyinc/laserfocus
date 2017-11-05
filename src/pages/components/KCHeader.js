@@ -9,7 +9,8 @@ import React, { Component } from 'react';
 export default class KCHeader extends Component {
     static get defaultProps() {
         return {
-            onToggleMenu: _.noop
+            onToggleMenu: _.noop,
+            onToggleBurger: _.noop
         }
     }
 
@@ -42,7 +43,7 @@ export default class KCHeader extends Component {
 
             <div className="application-header">
 
-                <KCHamburger
+                <KCHamburger onToggleBurger={this.props.onToggleBurger}
                     onToggleMenu={this.props.onToggleMenu}
                 />
 
