@@ -31,7 +31,7 @@ class Card extends Component {
 
         return connectDragSource(<div className={this.props.isDragging ? 'card dragging' : 'card'}>
             {/*<span className={deptClass += board.departmentClass}></span>*/}
-            <p className="text-emphasis"><Link route="detail" params={{id: card.id}}>{card.productDescription}</Link></p>
+            <Link route="detail" params={{id: card.id}}><p className="text-emphasis">{card.productDescription}</p></Link>
             <p><span className="text-med text-emphasis">Status: </span><span className="text-light">{card.status}</span></p>
             <p><span className="text-med text-emphasis">Date Introduced: </span><span className="text-light">{card.date}</span></p>
             <span className="avatar text-med text-emphasis"><img

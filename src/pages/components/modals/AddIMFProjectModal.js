@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Modal from 'simple-react-modal'
 import _ from 'lodash';
+import ModalPanel from "./ModalPanel";
 
 const overlayStyle = {
     backgroundColor: 'rgba(0,0,0,0.5)',
@@ -27,7 +28,9 @@ export default class AddIMFProjectModal extends Component {
         return {
             onClose: _.noop,
             onOpen: _.noop,
-            onAdd: _.noop
+            onAdd: _.noop,
+            onTogglePanel: _.noop,
+            items: _.noop
         }
     }
 
@@ -51,7 +54,34 @@ export default class AddIMFProjectModal extends Component {
     };
 
     render () {
-        const showModal = this.props.show
+
+        const showModal = this.props.show;
+
+        /* wouldn't this look good in the db? */
+        let items = [
+            {
+                header:'Blank/New SKU',
+                content:'Start with a blank SKU'
+            },
+            {
+                header:'SKU Template',
+                content:'Create a SKU with existing template'
+            },
+            {
+                header:'Upload From Excel Spreadsheet',
+                content:'Import an Excel Spreadsheet'
+            },
+            {
+                header:'From Existing SKU',
+                content:'Create a SKU from existing SKU attributes'
+            },
+            {
+                header:'Kleenex SKU Template',
+                content:'Create a SKU of Kleenex product attributes'
+            }
+        ];
+
+
         return (
             <Modal show={showModal} transitionSpeed={50}
                    style={overlayStyle}
@@ -64,30 +94,35 @@ export default class AddIMFProjectModal extends Component {
                         <div className="header-container">
                             <h1>Modal Header</h1>
                             <div className="btn-group">
-                                <button>Help</button>
+                                <button className="btn help">
+                                    <i className="material-icons help">help</i>
+                                    Help
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <div className="content">
                         <div className="attributes">
-                            <div className="stuff">
-                                <div>
-                                    <h4>Project Number</h4>
-                                    <h3 className="text-light">(200,003,023)</h3>
-                                </div>
-                                <div>
-                                    <h4>Project Title</h4>
-                                    <h3 className="text-light">(200,003,023) - Kleenex Disney tissues</h3>
-                                </div>
-                            </div>
+                            {
+
+                                _.map(items, (item, idx) => {
+                                    return <ModalPanel
+                                        onTogglePanel={this.props.onTogglePanel}
+                                        key={idx}
+                                        item={item}
+                                    />
+
+                                })
+
+                            }
                         </div>
                     </div>
 
                     <div className="footer">
                         <div className="btn-group">
-                            <button onClick={this.close}>Close</button>
-                            <button onClick={this.onAdd}>Add</button>
+                            <button className="btn" onClick={this.close}>Close</button>
+                            <button className="btn blue" onClick={this.onAdd}>Add</button>
                         </div>
                     </div>
                 </div>
@@ -103,7 +138,7 @@ export default class AddIMFProjectModal extends Component {
                     .header,
                     .footer {
                         background-color: #fafafa;
-                        height: 64px;
+                        min-height: 64px;
                         display: flex;
                         align-items: center;
                         padding: 0 32px;
@@ -120,48 +155,41 @@ export default class AddIMFProjectModal extends Component {
                             text-align: left;
                         }
 
+                    .btn-group {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                    }
+
+                        .header .btn-group .btn.help,
+                        .header .btn-group .btn .help {
+                            font-size: 14px;
+                            color: #1e9fcf;
+                        }
+
+                        .footer .btn-group {
+                            width: 100%;
+                            text-align: right;
+                        }
+
+
                     .content {
                         flex-grow: 1;
                     }
 
                     .attributes {
                         display: flex;
-                        flex-direction: column;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
                         margin: 30px;
                     }
 
-                        .attributes h4 {
+                        .attributes p {
+                            font-color: #354052
                             margin-bottom: 12px;
                         }
 
-                        .attributes h2 {
-                            border-bottom: 1px solid lightblue;
-                            line-height: 54px;
-                        }
 
-                        .attributes .stuff {
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-
-                        }
-
-                        .attributes .stuff div {
-                            width:50%;
-                        }
-
-                    .footer {
-                        height: 64px;
-                        background-color: #fafafa;
-                    }
-                        .footer .btn-group {
-                            width: 100%;
-                            text-align: right;
-                        }
-
-                    .btn-group button {
-                        margin: 0 0 0 24px;
-                    }
 
                     `}
                 </style>

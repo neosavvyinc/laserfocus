@@ -10,12 +10,9 @@ export default class KCHamburgerMenu extends Component {
 
     render() {
 
-        let menuClasses = 'navigation-menu';
-        if (this.props.isOpen) menuClasses += ' open';
-
         return (
 
-            <div className={menuClasses}>
+            <div className={this.props.isOpen ? 'navigation-menu open' : 'navigation-menu'}>
                 <ul className="align-top">
                     <li className="nav-item">Project View</li>
                     <li className="nav-item">Board View</li>
@@ -84,6 +81,7 @@ export default class KCHamburgerMenu extends Component {
                     line-height: 1.6em;
                     padding: 6px 6px 6px 30px;
                     margin: 0;
+                    cursor: pointer;
                 }
                 .nav-item:hover {
                     background-color: #f7f9fb;

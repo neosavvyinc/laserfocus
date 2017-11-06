@@ -16,11 +16,12 @@ export default class KCHamburger extends Component {
         };
     }
 
-    onToggleBurger = () => {
+     onToggleBurger = () => {
         this.setState(prevState => ({
             burgerOpen: !prevState.burgerOpen
         }));
     };
+
     onToggle = () => {
         this.props.onToggleMenu();
         this.onToggleBurger();
@@ -29,10 +30,8 @@ export default class KCHamburger extends Component {
     render() {
 
         let burgerClasses = 'bm-burger-button';
-        if (this.state.burgerOpen) burgerClasses += ' active';
-
         return (
-            <div className={burgerClasses}
+            <div className={this.state.burgerOpen ? 'bm-burger-button active' : 'bm-burger-button'}
                  onClick={this.onToggle} >
                 <span className="bm-icon">
                     <div className="bm-burger-bars"></div>
@@ -50,8 +49,7 @@ export default class KCHamburger extends Component {
                     align-items: center;
                     cursor: pointer;
                 }
-                    .bm-burger-button:hover,
-                    .bm-burger-button.active {
+                    .bm-burger-button:hover {
                         background-color: #1e9fcf;
                     }
 

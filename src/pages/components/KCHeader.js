@@ -65,7 +65,7 @@ export default class KCHeader extends Component {
                 </div>
 
                 <div className="btn-notification" onClick={() => this.openNotifications()}>
-                    <IconNotification />
+                    <IconNotification  openNotifications={this.state.notificationsOpen ? true : false} />
                     <NotificationFlyout openNotifications={this.state.notificationsOpen ? true : false} />
                 </div>
 
