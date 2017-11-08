@@ -75,6 +75,7 @@ export default () => (
                     the blue: #1e9fcf
                     the black: #354052
                     the grey: #9b9b9b
+                    the light grey: #e6eaee
                 */
 
                 h1, h2, h3, h4, h5, p {
@@ -194,18 +195,52 @@ export default () => (
                     margin-right: 4px;
                 }
 
+
+                .search-input {
+                    margin: 0 20px 0 0;
+                    width: 100%;
+                    height: 34px;
+                    border-radius: 4px;
+                    background-color: #ffffff;
+                    border: solid 1px #dfe3e9;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .hidden-search {
+                    width: 225px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    height: 85%;
+                    opacity: 0.5;
+                    font-size: 14px;
+                    line-height: 1.36;
+                    text-align: left;
+                    border: 0px solid;
+                    outline: none;
+                }
+
+                .magnify-icon {
+                    width: 20px;
+                    height: 20px;
+                }
+
                 .panel.modal {
                     min-height: 0;
                     width: 48%;
                     margin: 0 0 12px 0;
-                    padding: 14px;
                     border: none;
-                    cursor: pointer;
+                    position: relative;
                 }
                     .panel.modal.active {
                         border-radius: 4px;
                         background-color: rgba(30, 159, 207, 0.1);
                         border: solid 1px #1e9fcf;
+                    }
+
+                    .panel-modal-button {
+                        padding: 14px;
+                        cursor: pointer;
                     }
 
 

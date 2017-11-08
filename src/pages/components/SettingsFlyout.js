@@ -66,7 +66,7 @@ export default class SettingsFlyout extends Component {
                     }
 
                     .settings-flyout .settings-content {
-                        padding: 24px;
+                        padding: 0 24px 24px;
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;

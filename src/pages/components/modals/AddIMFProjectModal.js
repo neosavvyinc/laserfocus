@@ -6,7 +6,6 @@ import ModalPanel from "./ModalPanel";
 const overlayStyle = {
     backgroundColor: 'rgba(0,0,0,0.5)',
     width: '100%',
-    height: '100%',
     position: 'fixed',
     top: '0',
     left: '0',
@@ -17,10 +16,14 @@ const overlayStyle = {
 
 const containerStyle = {
     width: '730px',
+    height: '100%',
     position: 'relative',
     margin: '10% auto',
     padding: '0',
-    background: '#fff'
+    background: '#fff',
+    border: '1px solid transparent',
+    borderRadius: '4px',
+    boxShadow: '3px 3px 3px 3px rgba(0,0,0,0.1)'
 };
 
 export default class AddIMFProjectModal extends Component {
@@ -29,8 +32,7 @@ export default class AddIMFProjectModal extends Component {
             onClose: _.noop,
             onOpen: _.noop,
             onAdd: _.noop,
-            onTogglePanel: _.noop,
-            items: _.noop
+            onTogglePanel: _.noop
         }
     }
 
@@ -61,23 +63,37 @@ export default class AddIMFProjectModal extends Component {
         let items = [
             {
                 header:'Blank/New SKU',
-                content:'Start with a blank SKU'
+                content:'Start with a blank SKU',
+                dropdown: false
             },
             {
                 header:'SKU Template',
-                content:'Create a SKU with existing template'
+                content:'Create a SKU with existing template',
+                dropdown: false
             },
             {
                 header:'Upload From Excel Spreadsheet',
-                content:'Import an Excel Spreadsheet'
+                content:'Import an Excel Spreadsheet',
+                dropdown: false
             },
             {
                 header:'From Existing SKU',
-                content:'Create a SKU from existing SKU attributes'
+                content:'Create a SKU from existing SKU attributes',
+                dropdown: [
+                    {value: "Kleenex Anti-viral++ Tissues"},
+                    {value: "Kleenex Cool Touch™ Tissues"},
+                    {value: "Kleenex Everyday Tissues Disney Moana..."},
+                    {value: "Kleenex®  Soothing Lotion Tissues"},
+                    {value: "Kleenex Trusted Care Facial Tissues, Star Wars Designs"},
+                    {value: "Kleenex The Marvel Universe Designs Upright Tissue Box"},
+                    {value: "Kleenex Trusted Care Facial Tissues featuring Disney • Pixar’s Cars 3"},
+                    {value: "Kleenex Everyday Tissues Disney Moana..."}
+                ]
             },
             {
                 header:'Kleenex SKU Template',
-                content:'Create a SKU of Kleenex product attributes'
+                content:'Create a SKU of Kleenex product attributes',
+                dropdown: false
             }
         ];
 
@@ -105,7 +121,6 @@ export default class AddIMFProjectModal extends Component {
                     <div className="content">
                         <div className="attributes">
                             {
-
                                 _.map(items, (item, idx) => {
                                     return <ModalPanel
                                         onTogglePanel={this.props.onTogglePanel}
@@ -114,7 +129,6 @@ export default class AddIMFProjectModal extends Component {
                                     />
 
                                 })
-
                             }
                         </div>
                     </div>

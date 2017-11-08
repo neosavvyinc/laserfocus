@@ -12,7 +12,7 @@ export default class KCModal extends Component {
     constructor() {
         super();
         this.state = {
-            show: false
+            show: true
         }
     }
 

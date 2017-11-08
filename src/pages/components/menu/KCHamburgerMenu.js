@@ -83,12 +83,13 @@ export default class KCHamburgerMenu extends Component {
                     margin: 0;
                     cursor: pointer;
                 }
-                .nav-item:hover {
-                    background-color: #f7f9fb;
-                }
-                .nav-item.selected {
-                    background-color: #f7f9fb;
-                }
+                    .nav-item:hover {
+                        background-color: #f7f9fb;
+                    }
+                    .nav-item.selected {
+                        background-color: #f7f9fb;
+                    }
+
                 .align-top {
                     flex-grow: 1;
                 }
