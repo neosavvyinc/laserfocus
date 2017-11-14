@@ -26,11 +26,12 @@ class KCGestationBoard extends Component {
 
             <style jsx>{`
                 .board {
-                    margin: 0 32px;
-                    padding-bottom: 32px;
+                    padding: 0 32px 0;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    max-height: calc(100vh - 188px);
+                    overflow: hidden;
                 }
             `}
             </style>

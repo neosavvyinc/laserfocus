@@ -62,6 +62,7 @@ export default () => (
                     font-family: 'Source Sans Pro';
                     font-size: 16px;
                     color: #354052;
+                    overflow-y: hidden;
                 }
 
 
@@ -119,6 +120,14 @@ export default () => (
                         text-decoration: underline;
                     }
 
+                select {
+                    color: black;
+                    border: 1px solid #e6eaee;
+                    border-radius: 3px;
+                    background-color: white;
+                    font-size: 16px;
+                }
+
                 .text-emphasis {
                     font-weight: 600;
                     text-align: left;
@@ -164,7 +173,7 @@ export default () => (
                     width: auto;
                     min-width: 100px;
                     height: auto;
-                    padding: 7px 28px;
+                    padding: 9px 15px;
                     font-size: .87em;
                     line-height: inherit;
                     font-weight: 600;
@@ -309,7 +318,7 @@ export default () => (
                 .mainContainer {
                     max-width: 1440px;
                     min-height: 100vh;
-                    overflow: auto;
+                    //overflow: auto;
                 }
 
 

@@ -1,3 +1,6 @@
+import KCNavBar from './KCNavBar'
+
+
 export default ({ onClickAdd, hideAdd = false }) => {
 
     const onAdd = () => {
@@ -17,12 +20,11 @@ export default ({ onClickAdd, hideAdd = false }) => {
                 <p className="text-light">Project Management Associate Dashboard</p>
             </div>
 
+            <KCNavBar/>
+
             { hideAdd ?
                 <div></div>:
-                <div className="quick-add-sku-btn" onClick={onAdd}>
-                    <img className="plus-icon"/>
-                    <span className="quick-add-btn-txt">Add New SKU</span>
-                </div>
+                <button className="btn blue" onClick={onAdd}>+&nbsp;&nbsp;Add New SKU</button>
             }
         </div>
 
@@ -64,31 +66,14 @@ export default ({ onClickAdd, hideAdd = false }) => {
 
 
         .quick-add-sku-btn {
-            margin: auto;
-            align-self: flex-end;
-            display: flex;
-            width: 130px;
+            width: auto;
             height: 36px;
             border-radius: 4px;
             background-color: #1e9fcf;
             cursor: pointer;
-        }
-
-        .plus-icon {
-            margin: auto;
-            width: 10px;
-            height: 10px;
-            background-color: #ffffff;
-        }
-
-        .quick-add-btn-txt {
-            margin: auto;
-            width: 81px;
-            height: 19px;
-            font-size: 14px;
-            line-height: 1.36;
-            text-align: center;
             color: #ffffff;
+            line-height: 2em;
+            padding: 0 20px;
         }
 
 

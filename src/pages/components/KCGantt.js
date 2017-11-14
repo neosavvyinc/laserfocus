@@ -8,12 +8,13 @@ export default () => (
         <div className="chart-container">
             <div className="scrollable-div">
                 <table>
+                    <tbody>
                     <tr className="tr-month">
-                        <td rowspan="2" className="first">
+                        <td rowSpan="2" className="first">
                             Projects
                         </td>
 
-                        <td className="td-month" colspan="100">
+                        <td className="td-month" colSpan="100">
                             October
                         </td>
                     </tr>
@@ -238,6 +239,7 @@ export default () => (
                             21
                         </td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
         </div>

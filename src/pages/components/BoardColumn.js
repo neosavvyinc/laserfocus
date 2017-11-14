@@ -58,8 +58,10 @@ class BoardColumn extends Component {
                 <style jsx>{`
                     .column {
                         min-width: 320px;
-                        height: 100%;
                         margin: 13px 32px 0 0;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
                     }
 
                     .title p {
@@ -91,6 +93,7 @@ class BoardColumn extends Component {
                         border-top-left-radius: 0;
                         border-top-right-radius: 0;
                         min-height: 201px;
+                        overflow-y: auto;
                         cursor: pointer;
                         z-index: 2;
                     }
@@ -99,7 +102,7 @@ class BoardColumn extends Component {
                             position: absolute;
                             top: 0;
                             left: 0;
-                            height: 100%;
+                            //height: 100%;
                             width: 100%;
                             margin: 81px 0 0 0;
                             text-align: center;

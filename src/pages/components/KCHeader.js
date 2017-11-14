@@ -56,7 +56,6 @@ export default class KCHeader extends Component {
                     <span className="title text-emphasis">IMF Lite Tool 2.0</span>
                 </div>
 
-
                 <div className="search-input">
                     <input className="hidden-search" placeholder="Search"/>
                     <img src="/static/svg/ic-search.svg"
