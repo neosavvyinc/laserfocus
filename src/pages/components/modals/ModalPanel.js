@@ -14,7 +14,8 @@ export default class ModalPanel extends Component {
         this.state = {
             panelOpen: false,
             dropdownOpen: false,
-            selectedItem: ''
+            selectedItem: '',
+            searchBy: ''
         }
     }
 
@@ -81,6 +82,7 @@ export default class ModalPanel extends Component {
             }
         }
 
+        const { searchBy } = this.state;
         return (
             <div className={this.state.panelOpen ? 'modal panel active' : 'modal panel'}
                  key={item.idx}>
@@ -103,13 +105,20 @@ export default class ModalPanel extends Component {
                             </div>
 
                             <div className="search-input">
-                                <input className="hidden-search" placeholder="Search by SKU name"/>
+                                <input
+                                    onChange={(e)=>this.setState({ searchBy: e.target.value })}
+                                    className="hidden-search"
+                                    placeholder="Search by SKU name"/>
                             </div>
 
                             <div className="scrollable-div">
                                 <ul className="product-list">
                                     {
-                                        _.map(list, (listItem, idx) => {
+                                        _(list)
+                                            .filter((i) => {
+                                                return i && i.value.indexOf(searchBy) >= 0;
+                                            })
+                                            .map((listItem, idx) => {
                                             return <ListItem
                                                 className="product-item"
                                                 key={idx}
@@ -117,7 +126,8 @@ export default class ModalPanel extends Component {
                                                 closeDropdown={this.onCloseDropdown}
                                             />
 
-                                        })
+                                            }
+                                        ).value()
                                     }
                                 </ul>
                             </div>

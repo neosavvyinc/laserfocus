@@ -101,8 +101,9 @@ class Index extends Component {
             "date": "9/27/2017",
             "owner": "Adam Parrish"
         };
-        const action = addNewCardAction(newCard);
-        const result = await addCard(newCard)
+
+        const result = await addCard(newCard);
+        const action = addNewCardAction(result);
         this.props.dispatchAction(action);
         this.onCloseClicked();
     };

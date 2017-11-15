@@ -31,6 +31,7 @@ export async function addCard(card) {
         },
         body: JSON.stringify(card)
     });
-    await res.json();
-    return card;
+
+    const cardResult = await res.json();
+    return cardResult;
 }

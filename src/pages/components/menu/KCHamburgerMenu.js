@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Router } from '../../../routes';
 export default class KCHamburgerMenu extends Component {
 
     static get defaultProps() {
@@ -8,14 +8,18 @@ export default class KCHamburgerMenu extends Component {
         }
     }
 
+    navigateTo = (viewName) => {
+       Router.pushRoute(viewName)
+    };
+
     render() {
 
         return (
 
             <div className={this.props.isOpen ? 'navigation-menu open' : 'navigation-menu'}>
                 <ul className="align-top">
-                    <li className="nav-item">Project View</li>
-                    <li className="nav-item">Board View</li>
+                    <li className="nav-item" onClick={() => this.navigateTo('gantt')}>Project View</li>
+                    <li className="nav-item" onClick={() => this.navigateTo('index')}>Board View</li>
                     <li className="nav-item">Users</li>
                     <li className="nav-item">Royalty Codes</li>
                     <li className="nav-item">Facilitators</li>
