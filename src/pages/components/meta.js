@@ -126,6 +126,7 @@ export default () => (
                     border-radius: 3px;
                     background-color: white;
                     font-size: 16px;
+                    height: 36px;
                 }
 
                 .text-emphasis {
@@ -278,7 +279,7 @@ export default () => (
                 }
 
                 .status-icon {
-                    background: url(/static/svg/ic-progress-point-active.svg) 0 0 no-repeat;
+                    background: url(/static/svg/ic-time-point.svg) 0 0 no-repeat;
                     display: inline-block;
                     height: 10px;
                     width: 10px;
@@ -318,7 +319,6 @@ export default () => (
                 .mainContainer {
                     max-width: 1440px;
                     min-height: 100vh;
-                    //overflow: auto;
                 }
 
 

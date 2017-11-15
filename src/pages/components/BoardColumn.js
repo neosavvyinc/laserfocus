@@ -102,7 +102,6 @@ class BoardColumn extends Component {
                             position: absolute;
                             top: 0;
                             left: 0;
-                            //height: 100%;
                             width: 100%;
                             margin: 81px 0 0 0;
                             text-align: center;
